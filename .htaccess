@@ -4,7 +4,7 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
 
 ## (ROTEAMENTO) REDIRECIONA TODOS OS URL'S ERRADOS PARA ESTA PÁGINA ##
-ErrorDocument 404 /akiba_2.0/site/index.php
+ErrorDocument 404 /canal_start/site/index.php
 
 ## (ROTEAMENTO) GERAL ##
 RewriteRule ^/?$ site/index.php

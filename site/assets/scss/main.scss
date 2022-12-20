@@ -1,0 +1,62 @@
+@import "_colors.scss";
+//**********FONTES**********
+@font-face {
+    font-family: helvetica-regular;
+    src: url(../font/Helvetica-Compressed-Regular.otf);
+    font-display: swap;
+}
+
+//**********BODY**********
+*{
+    font-family: helvetica-regular !important;
+}
+
+.body{
+    background-color: $cinza-claro-01;
+}
+
+//**********NAVBAR**********
+.navbar{
+    height: 4rem;
+    background-image: url('../img/bg-nav.webp');
+    .nav-item{
+        margin: 3.3rem 0rem 0rem 0rem;
+        a{
+            margin: 1rem;
+            text-decoration: none;
+            color: $azul-medio-01;
+            font-size: 1.1rem;
+        }
+    }
+    .nav-logoPC{
+        width: 18rem;
+        height: 8rem;
+        background-image: url('../img/bg-nav.webp');
+        border-radius: 0rem 0rem 4rem 4rem;
+        a{
+            img{
+                width: 10rem;
+                margin: 2.8rem 0rem 0rem 0rem;
+            }
+        }
+    }
+}
+
+//**********PLAYER**********
+.player{
+    .player-leftSide{
+        border-radius: 0rem 0rem 10rem 0rem;
+    }
+    .player-rightSide{
+        border-radius: 10rem 0rem 0rem 0rem;
+    }
+    .player-container{
+        width: 53rem;
+        height: auto;
+        border: 0.5rem solid $cinza-medio-01;
+        border-radius: 1rem;
+        position: absolute;
+        top: 8rem;
+        left: 15.5rem;
+    }
+}
