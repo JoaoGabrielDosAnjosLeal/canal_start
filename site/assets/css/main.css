@@ -1,12 +1,8 @@
 @font-face {
-  font-family: helvetica-regular;
-  src: url(../font/Helvetica-Compressed-Regular.otf);
+  font-family: aquawax;
+  src: url(../font/aquawax.ttf);
   font-display: swap;
 }
-* {
-  font-family: helvetica-regular !important;
-}
-
 .body {
   background-color: #dfdfdf;
 }
@@ -22,7 +18,8 @@
   margin: 1rem;
   text-decoration: none;
   color: #003399;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: aquawax;
 }
 .navbar .nav-logoPC {
   width: 18rem;
@@ -49,6 +46,56 @@
   position: absolute;
   top: 8rem;
   left: 15.5rem;
+}
+
+.speedNews .speedNews-navbar {
+  height: 3rem;
+}
+.speedNews .speedNews-navbar .speedNews-container {
+  width: 18rem;
+  margin: -3rem 0rem 0rem 0rem;
+  background-image: url("../img/bg-nav.webp");
+  border-radius: 4rem 4rem 0rem 0rem;
+}
+.speedNews .speedNews-navbar .speedNews-container .speedNews-title {
+  margin: 0.8rem 0rem 0rem 0rem;
+  color: #dc0000;
+  font-size: 1.5rem;
+  font-family: aquawax;
+}
+.speedNews .speedNews-container .speedNews-article {
+  width: 34rem;
+  height: 15rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.speedNews .speedNews-container .speedNews-article .speedNews-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  filter: brightness(30%);
+}
+.speedNews .speedNews-container .speedNews-article .speedNews-author {
+  position: absolute;
+  margin: -14rem 0rem 0rem 0.7rem;
+  color: #ffffff;
+  font-family: aquawax;
+  font-size: 1.1rem;
+}
+.speedNews .speedNews-container .speedNews-article .speedNews-date {
+  position: absolute;
+  margin: -12.5rem 0rem 0rem 0.7rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+.speedNews .speedNews-container .speedNews-article .speedNews-text {
+  width: 90%;
+  position: absolute;
+  margin: -10rem 0rem 0rem 0.5rem;
+  font-family: aquawax;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */
