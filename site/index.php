@@ -14,37 +14,45 @@
             <h6 class="speedNews-title navbar-brand w-100 text-center text-uppercase">Speed News</h6>
         </div>
     </nav>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
-                <section class="speedNews-container d-flex flex-wrap gap-3 mt-4 mb-4">
-                    <article class="speedNews-article">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speed news">
-                        <p class="speedNews-text p-1">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable Eng
-                        </p>
-                        <h6 class="speedNews-credits"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</h6>
+                <section class="speedNews-container d-flex flex-wrap gap-3 justify-content-center mt-4 mb-4">
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://image.api.playstation.com/vulcan/ap/rnd/202206/0719/qpAUFYXSVRlSN0Z1MSKXPu92.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
                     </article>
-                    <article class="speedNews-article">
-                        <img class="speedNews-thumb" src="https://cdn2.unrealengine.com/egs-thelastofusparti-naughtydogllc-g2-00-3840x2160-e2632aa5352f.jpg" alt="Thumb da speed news">
-                        <p class="speedNews-text p-1">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable Eng
-                        </p>
-                        <h6 class="speedNews-credits"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</h6>
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
                     </article>
-                    <article class="speedNews-article">
-                        <img class="speedNews-thumb" src="https://adrenaline.com.br/uploads/chamadas/Detroit-Become-Human.jpg" alt="Thumb da speed news">
-                        <p class="speedNews-text p-1">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable Eng
-                        </p>
-                        <h6 class="speedNews-credits"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</h6>
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
                     </article>
-                    <article class="speedNews-article">
-                        <img class="speedNews-thumb" src="https://sm.ign.com/ign_br/news/n/no-guarant/no-guarantee-league-of-legends-mmo-gets-released-riot-execut_k85g.jpg" alt="Thumb da speed news">
-                        <p class="speedNews-text p-1">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable Eng
-                        </p>
-                        <h6 class="speedNews-credits"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</h6>
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
+                    </article>
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
+                    </article>
+                    <article class="speedNews-article position-relative">
+                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" alt="Thumb da speednews">
+                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
+                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
+                        <button class="speedNews-view btn btn-primary position-absolute"><i class="bi bi-eye-fill"></i></button>
                     </article>
                 </section>
             </div>
