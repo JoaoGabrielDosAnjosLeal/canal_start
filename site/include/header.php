@@ -18,15 +18,17 @@
     <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
+    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
     <!--css--> 
     <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.20.3/video-js.css">
 </head>
 <body class="body">
 
 <header class="header">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand d-lg-none" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +40,7 @@
                         <a class="text-uppercase" href="#">Originais</a>
                     </li>
                     <li class="nav-logoPC d-none d-lg-block ">
-                        <a class="nav-link d-flex justify-content-center" href="teste"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logomarca do site"></a>
+                        <a class="nav-link d-flex justify-content-center" href="teste"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Inicio do site"></a>
                     </li>
                     <li class="nav-item">
                         <a class="text-uppercase" href="a">Programação</a>
