@@ -4,13 +4,16 @@
   font-display: swap;
 }
 @font-face {
-  font-family: nunito-bold;
-  src: url(../font/Nunito-Bold.ttf);
+  font-family: metropolis-bold;
+  src: url(../font/Metropolis-Bold.otf);
   font-display: swap;
 }
 .navbar {
   height: 4rem;
   background-image: url("../img/bg-nav.webp");
+}
+.navbar .navbar-brand img {
+  width: 7rem;
 }
 .navbar .nav-item {
   margin: 3.3rem 0rem 0rem 0rem;
@@ -22,6 +25,16 @@
   font-size: 1rem;
   font-family: aquawax;
 }
+@media (max-width: 992px) {
+  .navbar .nav-item a {
+    margin: 0;
+  }
+}
+@media (max-width: 992px) {
+  .navbar .nav-item {
+    margin: 0.3rem 0rem 0rem 0rem;
+  }
+}
 .navbar .nav-logoPC {
   width: 18rem;
   height: 8rem;
@@ -32,6 +45,11 @@
   width: 10rem;
   margin: 2.8rem 0rem 0rem 0rem;
 }
+@media (max-width: 992px) {
+  .navbar {
+    height: auto;
+  }
+}
 
 .player {
   width: 100%;
@@ -41,13 +59,56 @@
 .player .player-leftSide {
   border-radius: 0rem 0rem 10rem 0rem;
 }
+@media (max-width: 992px) {
+  .player .player-leftSide {
+    display: none;
+  }
+}
 .player .player-rightSide {
   border-radius: 10rem 0rem 0rem 0rem;
+}
+@media (max-width: 992px) {
+  .player .player-rightSide {
+    display: none;
+  }
 }
 .player .player-video {
   width: 53rem;
   height: 30rem;
   margin: -33.5rem auto;
+}
+.player .player-video .btn-darkmode {
+  width: 2.5rem;
+  height: 2.5rem;
+  top: -3rem;
+  right: 0;
+  background-color: #ffffff;
+  border: 0.2rem solid #adadad;
+  font-size: 1.2rem;
+  color: #dc0000;
+}
+@media (max-width: 992px) {
+  .player .player-video .btn-darkmode {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+.player .player-video .video-js {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .player .player-video {
+    width: 100%;
+    height: 25rem;
+    margin: 0;
+    padding: 4rem 1rem 4rem 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .player {
+    height: auto;
+  }
 }
 
 .speedNews {
@@ -84,7 +145,7 @@
   top: 1rem;
   left: 1rem;
   color: #ffffff;
-  font-family: nunito-bold;
+  font-family: aquawax;
   font-size: 1rem;
   text-shadow: 0px 0px 3px #000000;
 }
@@ -94,12 +155,18 @@
   border-radius: 0.3rem;
   color: #ffffff;
 }
+@media (max-width: 420px) {
+  .speedNews .speedNews-section .speedNews-article .speedNews-text {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
 .speedNews .speedNews-section .speedNews-article .speedNews-credits {
   bottom: 1rem;
   left: 1rem;
   color: #ffffff;
   font-size: 1rem;
-  font-family: nunito-bold;
+  font-family: metropolis-bold;
   text-shadow: 0px 0px 3px #000000;
 }
 .speedNews .speedNews-section .speedNews-article .speedNews-view {
@@ -134,11 +201,26 @@
   color: #ffffff;
   font-size: 1.5rem;
 }
+@media (max-width: 576px) {
+  .schedule-section .schedule-container .schedule-content .schedule-contentTitle {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 420px) {
+  .schedule-section .schedule-container .schedule-content .schedule-contentTitle {
+    font-size: 1.2rem;
+  }
+}
 .schedule-section .schedule-container .schedule-content .schedule-contentClock {
   margin: 0.3rem 0rem 0rem 6rem;
-  font-family: nunito-bold;
+  font-family: metropolis-bold;
   font-size: 0.8rem;
   color: #ffffff;
+}
+@media (max-width: 576px) {
+  .schedule-section .schedule-container .schedule-content {
+    width: 100%;
+  }
 }
 
 .originals-section .originals-title {
@@ -146,8 +228,60 @@
   font-family: aquawax;
   font-size: 1.5rem;
 }
-.originals-section .originals-container iframe {
+.originals-section .originals-container .originals-content iframe {
   border-radius: 1rem;
+}
+.originals-section .originals-container .originals-content .originals-contentTitle {
+  color: #ffffff;
+  font-family: metropolis-bold;
+  font-size: 1.2rem;
+}
+.originals-section .originals-container .originals-content .originals-contentTitle a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: aquawax;
+}
+@media (max-width: 992px) {
+  .originals-section .originals-container {
+    flex-wrap: wrap;
+  }
+}
+
+.where-section .where-title {
+  color: #ffffff;
+  font-family: aquawax;
+  font-size: 1.5rem;
+}
+.where-section .where-container .where-thumb {
+  width: 13rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-section .about-title {
+  color: #ffffff;
+  font-family: aquawax;
+  font-size: 1.5rem;
+}
+.about-section .about-text {
+  color: #ffffff;
+  font-family: metropolis-bold;
+  font-size: 1.3rem;
+}
+
+footer {
+  background-color: #3a3a3a;
+}
+footer .footer .footer-logo {
+  width: 9rem;
+}
+footer .footer .footer-text {
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+footer .footer .footer-text span {
+  color: #007fff;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,101 +1,95 @@
-<?php include('include/header.php'); ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-language" content="pt-br, en-US" />
+    <meta http-equiv="cache-control" content="max-age=31536000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="João Gabriel dos Anjos Leal (Suzuh)" />
+    <meta name="description" content="START é um canal OTT Streaming TV transmitindo 24h pela internet, ou seja, somos um canal de televisão brasileiro e gamer de abrangência global!" />
+    <meta name="keywords" content="start, começo, começar, início, iniciar, canal, channel, tv, televisão, television, grátis, free, online, stream, streaming, ott, over the top, 24h, internet, brasil, brasileiro, brasileira, global, gênero, gêneros, otaku, atakus, otome, otomes, anime, animes, geek, geeks, filme, filmes, movie, movies, série, séries, serie, series, nerd, nerds, tech, tecnologia, pause, pausa, pausar, opção, game, games, gamer, gamers, play, plays, gameplay, gameplays, ação, action, aventura, adventure, esporte, esportes, sport, sports, live, life, ao vivo, transmissão, transmission, gravado, gravação, recorder, evento, eventos, esport, esports, eletrônico, eletrônicos" />
+    <meta name="copyright" content="© <?php echo date("Y"); ?> Canal START | Pausar não é uma opção!" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <title>Canal START | Pausar não é uma opção!</title>
+    <link rel="shortcut icon" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/favicon.ico" type="image/x-icon">
+    <!--preloads-->
+    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
+    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
+    <!--css--> 
+    <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.20.3/video-js.css">
+</head>
+<body class="body">
+
+<header class="header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="#"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" loading="lazy" alt="Logo do site"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="text-uppercase" href="#">Originais</a>
+                    </li>
+                    <li class="nav-logoPC d-none d-lg-block ">
+                        <a class="nav-link d-flex justify-content-center" href="teste"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do site"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-uppercase" href="a">Programação</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <div class="player">
     <img class="player-leftSide" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/bg-player.left.webp" alt="Fundo lado esquerdo">
     <img class="player-rightSide float-end" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/bg-player.right.webp" alt="Fundo lado direito">
-        <video id="my-video" class="player-video video-js" controls autoplay muted poster="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" data-setup="{}">
+    <div class="player-video position-relative">
+        <button class="btn-darkmode position-absolute rounded-circle p-0"><i class="bi bi-moon-stars-fill"></i></button>
+        <video id="my-video" class="video-js" controls autoplay muted poster="https://i.imgur.com/bqQFO6t.png" data-setup="{}">
             <source src="https://stmv1.srvif.com/canalstart/canalstart/playlist.m3u8" type="application/x-mpegURL" />
         </video>
+    </div>
 </div>
 
-<div class="speedNews">
-    <nav class="speedNews-navbar navbar w-100">
-        <div class="speedNews-container container-fluid mx-auto">
-            <h6 class="speedNews-title navbar-brand text-center text-uppercase">Speed News</h6>
-        </div>
-    </nav>
+<main>
+    <!--O CONTEÚDO SERÁ CARREGADO DINAMICAMENTE-->
+</main>
+
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
-                <section class="speedNews-section d-flex flex-wrap gap-3 justify-content-center mt-4 mb-4">
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://image.api.playstation.com/vulcan/ap/rnd/202206/0719/qpAUFYXSVRlSN0Z1MSKXPu92.jpg" loading="lazy" alt="Thumb da speednews">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy"  alt="Thumb da speednews">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy"  alt="Thumb da speednews">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy"  alt="Thumb da speednews">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;2 de Junho</span>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
+                <section class="footer d-flex justify-content-center flex-wrap pt-4 pb-4">
+                    <img class="footer-logo" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" loading="lazy" alt="Logo do site">
+                    <p class="footer-text w-100 text-center m-0 mt-3">
+                        Copyright © 2022 - <?php echo date("Y"); ?> | Canal Start - Pausar não é uma opção!<br>
+                        Planejamento por <span>Antônio Lopes</span>, design por <span>Ellyson Santos</span> e desenvolvimento por <span>João Gabriel</span>.<br>
+                        Todas as imagens de jogos, consoles, personagens e etc são marcas registradas dos seus respectivos autores.
+                    </p>
                 </section>
             </div>
         </div>
     </div>
-</div>
+</footer>
 
-<div class="schedule pt-4 pb-4" style="background-image: url('https://i.imgur.com/Rug7Aag.jpg');">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
-                <section class="schedule-section">
-                    <h6 class="schedule-title text-center text-uppercase">Programas em destaques</h6>
-                    <div class="schedule-container d-flex gap-3 flex-wrap mt-4">
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="originals pt-4 pb-4" style="background-image: url('https://i.imgur.com/mo2zZa8.jpg');">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
-                <section class="originals-section">
-                    <h6 class="originals-title text-center text-uppercase">Originais</h6>
-                    <div class="originals-container d-flex gap-4 mt-4">
-                        <iframe class="rumble" width="100%" height="360" src="https://rumble.com/embed/v1z219o/?pub=4" frameborder="0" allowfullscreen></iframe>
-                        <iframe class="rumble" width="100%" height="360" src="https://rumble.com/embed/v1z219o/?pub=4" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
 
-<?php include('include/footer.php'); ?>
+<!--javascript-->
+<script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script defer src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+<script defer src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/js/main.js"></script>
+</body>
+</html>
