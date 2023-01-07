@@ -30,20 +30,20 @@
 <header class="header">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand d-lg-none" href="#"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" loading="lazy" alt="Logo do site"></a>
+            <a class="navbar-brand d-lg-none" onclick="history.pushState('home', 'home', '/canal_start'); router();"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" loading="lazy" alt="Logo do site"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="text-uppercase" href="#">Originais</a>
+                        <a class="text-uppercase" onclick="history.pushState('originais', 'originais', '/canal_start/originais/'); router();">Originais</a>
                     </li>
-                    <li class="nav-logoPC d-none d-lg-block ">
-                        <a class="nav-link d-flex justify-content-center" href="teste"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do site"></a>
+                    <li class="nav-logoPC d-none d-lg-block">
+                        <a class="nav-link d-flex justify-content-center" onclick="history.pushState('home', 'home', '/canal_start'); router();"><img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do site"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-uppercase" href="a">Programação</a>
+                        <a class="text-uppercase" onclick="history.pushState('programacao', 'programacao', '/canal_start/programacao/'); router();">Programação</a>
                     </li>
                 </ul>
             </div>
@@ -54,15 +54,15 @@
 <div class="player">
     <img class="player-leftSide" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/bg-player.left.webp" alt="Fundo lado esquerdo">
     <img class="player-rightSide float-end" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/bg-player.right.webp" alt="Fundo lado direito">
-    <div class="player-video position-relative">
-        <button class="btn-darkmode position-absolute rounded-circle p-0"><i class="bi bi-moon-stars-fill"></i></button>
+    <div class="player-video">
+        <button class="btn-theme position-absolute rounded-circle p-0"><i class="bi bi-moon-stars-fill"></i></button>
         <video id="my-video" class="video-js" controls autoplay muted poster="https://i.imgur.com/bqQFO6t.png" data-setup="{}">
             <source src="https://stmv1.srvif.com/canalstart/canalstart/playlist.m3u8" type="application/x-mpegURL" />
         </video>
     </div>
 </div>
 
-<main>
+<main class="main">
     <!--O CONTEÚDO SERÁ CARREGADO DINAMICAMENTE-->
 </main>
 
@@ -71,9 +71,9 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
                 <section class="footer d-flex justify-content-center flex-wrap pt-4 pb-4">
-                    <img class="footer-logo" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" loading="lazy" alt="Logo do site">
+                    <img class="footer-logo" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.white.webp" loading="lazy" alt="Logo do site">
                     <p class="footer-text w-100 text-center m-0 mt-3">
-                        Copyright © 2022 - <?php echo date("Y"); ?> | Canal Start - Pausar não é uma opção!<br>
+                        Copyright © 2022 - <?php echo date("Y"); ?> | Canal Start - Pausar não é uma OPÇÃO!<br>
                         Planejamento por <span>Antônio Lopes</span>, design por <span>Ellyson Santos</span> e desenvolvimento por <span>João Gabriel</span>.<br>
                         Todas as imagens de jogos, consoles, personagens e etc são marcas registradas dos seus respectivos autores.
                     </p>
@@ -86,10 +86,11 @@
 
 
 <!--javascript-->
-<script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-<script defer src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-<script defer src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+<script src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/js/main.js"></script>
 </body>
 </html>

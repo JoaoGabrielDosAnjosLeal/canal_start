@@ -1,3 +1,47 @@
+<script async defer>
+    $('title').text('Canal START | Pausar não é uma OPÇÃO!');
+    //SpeedNews
+    $('.speedNews-article').children('button').click(function(){
+        $(this).parent().children('p, span').fadeToggle();
+    });
+
+    //Tema da página
+    switch(Cookies.get('theme')){
+        case 'dark':
+            $('.speedNews-navbar').css({"background-image": "url('/canal_start/site/assets/img/bg-nav.black.webp')"});
+            $('.speedNews-container').css({"background-image": "url('/canal_start/site/assets/img/bg-nav.center.black.webp')"});
+            $('.speedNews').css({"background-color": "#393939"});
+            $('.speedNews-title').css({"color": "#ffffff"});
+        break;
+        default:
+            $('.speedNews-navbar').css({"background-image": "url('/canal_start/site/assets/img/bg-nav.webp')"});
+            $('.speedNews-container').css({"background-image": "url('/canal_start/site/assets/img/bg-nav.center.webp')"});
+            $('.speedNews').css({"background-color": ""});
+            $('.speedNews-title').css({"color": ""});
+        break;
+    }
+
+    //Desfaz alterações das páginas internas
+    $('.player').css({'height': ''});
+    $('.player-leftSide, .player-rightSide').css({'display': ''});
+    $('.btn-theme').show();
+
+    $('.player-video').css({
+        'width': '',
+        'height': '',
+        'position': '',
+        'top': 'auto', //Essa propriedade não tem padrão no css, é só somente para que o elemento volte ao seu estado original do draggable do jquery ui
+        'left': 'auto', //Essa propriedade não tem padrão no css, é só somente para que o elemento volte ao seu estado original do draggable do jquery ui
+        'right': '',
+        'bottom': '',
+        'margin': '',
+        'z-index': ''
+    })
+
+    $('.player-video').draggable(); //É necessário iniciar o draggable pra destruir ele primeiro, isso foi feito pro primeiro acesso
+    $('.player-video').draggable("destroy");
+</script>
+
 <div class="speedNews">
     <nav class="speedNews-navbar navbar w-100">
         <div class="speedNews-container container-fluid mx-auto">
@@ -15,24 +59,27 @@
                         <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
                     </article>
                     <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy" alt="Thumb da speednews">
+                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da speednews">
                         <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
                         <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</span>
                         <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
                     </article>
                     <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy" alt="Thumb da speednews">
+                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da speednews">
                         <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
                         <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</span>
                         <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
                     </article>
                     <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://tribunapr.uol.com.br/wp-content/uploads/sites/56/2022/11/30145253/super-mario-bros-o-filme-trailer-e-data-de-estreia-970x550.jpg" loading="lazy" alt="Thumb da speednews">
+                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da speednews">
                         <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
                         <span class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i style="font-size: 0.98rem" class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</span>
                         <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
                     </article>
                 </section>
+                <div class="speedNews-plus w-100 d-flex justify-content-center mb-4">
+                    <button onclick="history.pushState('speednews', 'speednews', '/canal_start/speednews/'); router();" type="button" class="btn btn-primary text-uppercase"><i class="bi bi-plus-lg"></i> Exibir mais speedNews</button>
+                </div>
             </div>
         </div>
     </div>

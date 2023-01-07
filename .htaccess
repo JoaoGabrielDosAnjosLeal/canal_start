@@ -8,3 +8,9 @@ ErrorDocument 404 /canal_start/site/index.php
 
 ## (ROTEAMENTO) GERAL ##
 RewriteRule ^/?$ site/index.php
+RewriteRule ^programacao?$ site/index.php
+RewriteRule ^originais(.+)?$ site/index.php
+RewriteRule ^speednews(.+)?$ site/index.php
+
+
+
