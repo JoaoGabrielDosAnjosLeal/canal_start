@@ -3,13 +3,11 @@
      switch(Cookies.get('theme')){
         case 'dark':
             $('.body').css({'background-color': '#393939'});
-            $('.originals-title').css({'color': '#ffffff'});
-            $('.originals-contentTitle, .originals-contentTitle > a').css({'color': '#ffffff'});
+            $('.originals-title, .originals-contentTitle, .originals-contentTitle > a').css({'color': '#ffffff'});
         break;
         default:
             $('.body').css({'background-color': ''});
-            $('.originals-title').css({'color': '#dc0000'});
-            $('.originals-contentTitle, .originals-contentTitle > a').css({'color': '#dc0000'});
+            $('.originals-title, .originals-contentTitle, .originals-contentTitle > a').css({'color': '#dc0000'});
         break;
     }
 

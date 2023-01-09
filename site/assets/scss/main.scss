@@ -146,11 +146,11 @@
                 top: 1rem;
                 left: 1rem;
                 color: $branco;
-                font-family: aquawax;
+                font-family: metropolis-bold;
                 font-size: 1rem;
                 text-shadow: 0px 0px 3px $preto;
                 span{
-                    padding: 0rem 0.3rem 0rem 0.3rem;
+                    padding: 0.3rem;
                     background-color: rgba(0, 128, 255, 0.5);
                     border-radius: 0.3rem;
                     color: $branco;
@@ -187,32 +187,48 @@
     }
 }
 .speedNews-show{
-    img{
+    .speedNews-showTitle{
+        color: $preto;
+        font-family: metropolis-bold;
+        font-size: 1.5rem;
+    }
+    .speedNews-showThumb{
         width: 100%;
         height: 15rem;
         object-fit: cover;
         border-radius: 0.5rem;
     }
-    p{
-        width: 100%;
-        top: 1rem;
-        left: 1rem;
+    .speedNews-showText{
         color: $preto;
-        font-family: aquawax;
+        font-family: metropolis-bold;
         font-size: 1rem;
         span{
-            padding: 0rem 0.3rem 0rem 0.3rem;
-            background-color: rgba(0, 128, 255, 0.5);
+            padding: 0.3rem;
             border-radius: 0.3rem;
-            color: $preto;
+            background-color: $azul-claro-01;
+            color: $branco;
         }
     }
-    span{
-        bottom: 1rem;
-        left: 1rem;
-        color: $preto;
+    .speedNews-showCredits{
+        margin: -0.5rem 0rem 0rem 0rem;
         font-size: 1rem;
         font-family: metropolis-bold;
+        color: $preto;
+    }
+    .speedNews-showReactTitle{
+        font-size: 1.2rem;
+        font-family: metropolis-bold;
+        color: $preto;
+    }
+    .speedNews-showReactContainer{
+        .speedNews-showReactBtn{
+            font-family: metropolis-bold;
+            color: $cinza-medio-01;
+            font-size: 1.5rem;
+            &:hover{
+                color: $preto;
+            }
+        }
     }
 }
 
@@ -236,7 +252,7 @@
             }
             .schedule-contentTitle{
                 margin: -5rem 0rem 0rem 6rem;
-                font-family: aquawax;
+                font-family: metropolis-bold;
                 color: $branco;
                 font-size: 1.5rem;
                 @include sm{
@@ -333,5 +349,22 @@ footer{
                 color: $azul-claro-01;
             }
         }
+    }
+}
+
+//********** ERRO 404 **********
+.erro404{
+    .erro404-thumb{
+        width: 14rem;
+    }
+    .erro404-title{
+        font-family: aquawax;
+        font-size: 3rem;
+    }
+    .erro404-text{
+        font-family: aquawax;
+    }
+    .erro404-btn{
+        font-family: aquawax;
     }
 }

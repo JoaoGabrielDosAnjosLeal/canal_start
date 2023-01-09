@@ -154,12 +154,12 @@
   top: 1rem;
   left: 1rem;
   color: #ffffff;
-  font-family: aquawax;
+  font-family: metropolis-bold;
   font-size: 1rem;
   text-shadow: 0px 0px 3px #000000;
 }
 .speedNews .speedNews-section .speedNews-article .speedNews-text span {
-  padding: 0rem 0.3rem 0rem 0.3rem;
+  padding: 0.3rem;
   background-color: rgba(0, 128, 255, 0.5);
   border-radius: 0.3rem;
   color: #ffffff;
@@ -192,32 +192,46 @@
   font-family: aquawax;
 }
 
-.speedNews-show img {
+.speedNews-show .speedNews-showTitle {
+  color: #000000;
+  font-family: metropolis-bold;
+  font-size: 1.5rem;
+}
+.speedNews-show .speedNews-showThumb {
   width: 100%;
   height: 15rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
-.speedNews-show p {
-  width: 100%;
-  top: 1rem;
-  left: 1rem;
+.speedNews-show .speedNews-showText {
   color: #000000;
-  font-family: aquawax;
+  font-family: metropolis-bold;
   font-size: 1rem;
 }
-.speedNews-show p span {
-  padding: 0rem 0.3rem 0rem 0.3rem;
-  background-color: rgba(0, 128, 255, 0.5);
+.speedNews-show .speedNews-showText span {
+  padding: 0.3rem;
   border-radius: 0.3rem;
-  color: #000000;
+  background-color: #007fff;
+  color: #ffffff;
 }
-.speedNews-show span {
-  bottom: 1rem;
-  left: 1rem;
-  color: #000000;
+.speedNews-show .speedNews-showCredits {
+  margin: -0.5rem 0rem 0rem 0rem;
   font-size: 1rem;
   font-family: metropolis-bold;
+  color: #000000;
+}
+.speedNews-show .speedNews-showReactTitle {
+  font-size: 1.2rem;
+  font-family: metropolis-bold;
+  color: #000000;
+}
+.speedNews-show .speedNews-showReactContainer .speedNews-showReactBtn {
+  font-family: metropolis-bold;
+  color: #adadad;
+  font-size: 1.5rem;
+}
+.speedNews-show .speedNews-showReactContainer .speedNews-showReactBtn:hover {
+  color: #000000;
 }
 
 .schedule-section .schedule-title {
@@ -238,7 +252,7 @@
 }
 .schedule-section .schedule-container .schedule-content .schedule-contentTitle {
   margin: -5rem 0rem 0rem 6rem;
-  font-family: aquawax;
+  font-family: metropolis-bold;
   color: #ffffff;
   font-size: 1.5rem;
 }
@@ -323,6 +337,20 @@ footer .footer .footer-text {
 }
 footer .footer .footer-text span {
   color: #007fff;
+}
+
+.erro404 .erro404-thumb {
+  width: 14rem;
+}
+.erro404 .erro404-title {
+  font-family: aquawax;
+  font-size: 3rem;
+}
+.erro404 .erro404-text {
+  font-family: aquawax;
+}
+.erro404 .erro404-btn {
+  font-family: aquawax;
 }
 
 /*# sourceMappingURL=main.css.map */

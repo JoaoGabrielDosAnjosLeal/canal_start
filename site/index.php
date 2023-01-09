@@ -12,18 +12,29 @@
     <meta name="copyright" content="© <?php echo date("Y"); ?> Canal START | Pausar não é uma opção!" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <title>Canal START | Pausar não é uma opção!</title>
+    <title>Canal START | Pausar não é uma OPÇÃO!</title>
     <link rel="shortcut icon" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/favicon.ico" type="image/x-icon">
     <!--preloads-->
-    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css" as="style">
+    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
     <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
     <!--css--> 
-    <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.css">
+    <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/css/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://vjs.zencdn.net/7.20.3/video-js.css">
+    <!--pwa-->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Start">
+    <meta name="apple-mobile-web-app-title" content="Start">
+    <meta name="theme-color" content="#003399">
+    <meta name="msapplication-navbutton-color" content="#003399">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="./">
+    <link rel="apple-touch-icon" type="image/png" sizes="200x200" href="https://i.imgur.com/EElpuYW.png">
 </head>
 <body class="body">
 
@@ -91,6 +102,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-<script src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/js/main.js"></script>
+<script src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/js/main.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,18 @@
+//******PWA******
+if ("serviceWorker" in navigator) {
+    if (navigator.serviceWorker.controller) {
+        console.log("[CANAL START PWA] ServiceWorker encontrado e ativo, não há necessidade de registrar e ativar um novo");
+    } else {
+        navigator.serviceWorker
+            .register("./sw.js", {
+                scope: "./"
+            })
+            .then(function(reg) {
+                console.log("[CANAL START PWA] ServiceWorder foi regristado e esta ativado! " + reg.scope);
+            });
+    }
+}
+
 //******ROTAS******
 function router(){
     var url = window.location.href;
@@ -20,6 +35,9 @@ function router(){
         case 'speednews':
             $('.main').load(`http://localhost/canal_start/site/page/speednews.php/${urlSubPoint01}`);
         break;
+        default: 
+            $('.main').load(`http://localhost/canal_start/site/page/404.php`);
+        break;
     }
 
     window.addEventListener('popstate', (e)=>{
@@ -31,8 +49,14 @@ function router(){
             case 'programacao':
                 $('.main').load(`http://localhost/canal_start/site/page/programacao.php/${urlSubPoint01}`);
             break;
+            case 'originais':
+                $('.main').load(`http://localhost/canal_start/site/page/originais.php/${urlSubPoint01}`);
+            break;
             case 'speednews':
                 $('.main').load(`http://localhost/canal_start/site/page/speednews.php/${urlSubPoint01}`);
+            break;
+            default: 
+                $('.main').load(`http://localhost/canal_start/site/page/404.php`);
             break;
         }
     });
