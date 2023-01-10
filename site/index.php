@@ -93,7 +93,7 @@
                 <section class="footer d-flex justify-content-center flex-wrap pt-4 pb-4">
                     <img class="footer-logo" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.white.webp" loading="lazy" alt="Logo do site">
                     <p class="footer-text w-100 text-center m-0 mt-3">
-                        Copyright © 2022 - <?php echo date("Y"); ?> Start | Versão Song Ga-Kyeong 2.0<br>
+                        Copyright © 2022 - <?php echo date("Y"); ?> Canal START | Versão Song Ga-Kyeong 2.0<br>
                         Planejamento por <span>Antônio Lopes</span>, design por <span>Ellyson Santos</span> e desenvolvimento por <span>João Gabriel</span>.<br>
                         Todas as imagens de jogos, consoles, personagens e etc são marcas registradas dos seus respectivos autores.
                     </p>

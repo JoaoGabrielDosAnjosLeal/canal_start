@@ -12,7 +12,7 @@
     <meta name="copyright" content="© <?php echo date('Y'); ?> Canal START | Painel administrativo" />
     <meta name="robots" content="no-index" />
     <meta name="googlebot" content="no-index" />
-    <title>START | Song Ga-Kyeong Panel</title>
+    <title>Canal START | Song Ga-Kyeong Panel</title>
     <link rel="icon" type="image/x-icon" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/favicon.ico">
     <!--preload -->
     <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.min.css" as="style">

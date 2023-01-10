@@ -1,5 +1,5 @@
 <script defer>
-    $('title').text('START | Pausar não é uma OPÇÃO!');
+    $('title').text('Canal START | Pausar não é uma OPÇÃO!');
     //SpeedNews
     $('.speedNews-article').children('button').click(function(){
         $(this).parent().children('p, span').fadeToggle();

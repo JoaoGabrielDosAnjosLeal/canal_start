@@ -46,7 +46,7 @@
 
 <?php if(empty($urlParameter)){ ?>
 <script async defer>
-    $('title').text('START | Speed News');
+    $('title').text('Canal START | Speed News');
 </script>
 <div class="speedNews">
     <div class="container mt-lg-5">
@@ -84,7 +84,7 @@
 </div>
 <?php } else {?>
 <script async defer>
-    $('title').text('START | Titulo da speed news');
+    $('title').text('Canal START | Titulo da speed news');
 </script>
 <div class="container mt-lg-5">
     <div class="row d-flex justify-content-center">

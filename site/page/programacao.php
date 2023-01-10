@@ -1,5 +1,5 @@
 <script defer>
-    $('title').text('START | Programação');
+    $('title').text('Canal START | Programação');
 
     //Tema da página
      switch(Cookies.get('theme')){
