@@ -1,5 +1,5 @@
-<script async defer>
-    $('title').text('Canal START | Pausar não é uma OPÇÃO!');
+<script defer>
+    $('title').text('START | Pausar não é uma OPÇÃO!');
     //SpeedNews
     $('.speedNews-article').children('button').click(function(){
         $(this).parent().children('p, span').fadeToggle();
@@ -78,7 +78,7 @@
                     </article>
                 </section>
                 <div class="speedNews-plus w-100 d-flex justify-content-center mb-4">
-                    <button onclick="history.pushState('speednews', 'speednews', '/canal_start/speednews/'); router();" type="button" class="btn btn-primary text-uppercase"><i class="bi bi-plus-lg"></i> Exibir mais speedNews</button>
+                    <button onclick="history.pushState('speednews', 'speednews', '/canal_start/speednews/'); router();" type="button" class="btn btn-primary text-uppercase" aria-label="Mais speed news"><i class="bi bi-plus-lg"></i> Exibir mais speedNews</button>
                 </div>
             </div>
         </div>

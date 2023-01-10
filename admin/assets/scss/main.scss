@@ -1,0 +1,71 @@
+@import "_colors.scss", "_breakpoint.scss";
+//**********FONTES**********
+@font-face {
+    font-family: aquawax;
+    src: url(../font/aquawax.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: metropolis-bold;
+    src: url(../font/Metropolis-Bold.otf);
+    font-display: swap;
+}
+
+//**********LOGIN**********
+.login{
+    background-color: $branco;
+    border-radius: 1rem 2rem 2rem 1rem;
+    .login-left{
+        width: 50%;
+        .login-logo{
+            width: 8rem;
+        }
+        .login-form{
+            div{
+                label{
+                    font-family: metropolis-bold;
+                }
+                input{
+                    margin: -0.3rem 0rem 0rem 0rem;
+                    border: 0.1rem solid $preto;
+                    border-radius: 0.5rem;
+                }
+            }
+            button{
+                background-color: $azul-medio-01;
+                font-family: metropolis-bold;
+                color: $branco;
+            }
+        }
+        @include lg{
+            width: 100%;
+        }
+    }
+    .login-help{
+        background-color: $vermelho-medio-01;
+        font-family: metropolis-bold;
+        color: $branco;
+        &:hover{
+            background-color: $vermelho-medio-01 !important;
+            font-family: metropolis-bold;
+            color: $branco !important;
+        }
+    }
+    .login-right{
+        width: 50%;
+        .login-banner{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0rem 1rem 1rem 0rem;
+        }
+    }
+}
+
+//**********RODAPÉ**********
+footer{
+    bottom: 1rem;
+    font-family: metropolis-bold;
+    font-size: 0.8rem;
+}

@@ -1,4 +1,4 @@
-<script async defer>
+<script defer>
     //Tema da página
      switch(Cookies.get('theme')){
         case 'dark':
@@ -46,7 +46,7 @@
 
 <?php if(empty($urlParameter)){ ?>
 <script async defer>
-    $('title').text('Canal START | Originais');
+    $('title').text('START | Originais');
 </script>
 <div class="container">
     <div class="row mt-lg-4">
@@ -71,7 +71,7 @@
 <?php } else {?>
 <div class="container">
 <script async defer>
-    $('title').text('Canal START | Titulo da tag');
+    $('title').text('START | Titulo da tag');
 </script>
     <div class="row mt-lg-4">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">

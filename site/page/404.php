@@ -1,4 +1,4 @@
-<script async defer>
+<script defer>
     //Tema da página
      switch(Cookies.get('theme')){
         case 'dark':

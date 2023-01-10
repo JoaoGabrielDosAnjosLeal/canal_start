@@ -1,5 +1,5 @@
-<script async defer>
-    $('title').text('Canal START | Programação');
+<script defer>
+    $('title').text('START | Programação');
 
     //Tema da página
      switch(Cookies.get('theme')){
