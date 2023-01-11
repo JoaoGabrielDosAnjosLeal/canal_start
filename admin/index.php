@@ -35,18 +35,18 @@
             <section class="login d-flex gap-3 mt-4">
                 <div class="login-left p-4">
                     <img class="login-logo mb-4" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do painel">
-                    <form class="login-form">
+                    <form class="login-form" action="javascript: login_form();">
                         <div class="mb-3">
                             <label for="email" class="form-label"><i class="bi bi-envelope-fill"></i>&nbsp;E-mail</label>
-                            <input type="email" class="form-control shadow-none" id="email" aria-label="email" placeholder="Fuslie" required>
+                            <input type="email" name="email" class="form-control shadow-none" id="email" aria-label="email" placeholder="Fuslie" required>
                         </div>
                         <div class="mb-4">
                             <label for="senha" class="form-label"><i class="bi bi-key-fill"></i>&nbsp;Senha</label>
-                            <input type="password" class="form-control shadow-none" id="senha" aria-label="senha" placeholder="•••••••••" required>
+                            <input type="password" name="senha" class="form-control shadow-none" id="senha" aria-label="senha" placeholder="•••••••••" required>
                         </div>
                         <button type="submit" class="btn w-100 text-uppercase"><i class="bi bi-box-arrow-in-right"></i>&nbsp;Entrar</button>
                     </form>
-                    <button type="submit" class="login-help btn w-100 mt-2 text-uppercase"><i class="bi bi-question-circle"></i>&nbsp;Ajuda</button>
+                    <button class="login-help btn w-100 mt-2 text-uppercase"><i class="bi bi-question-circle"></i>&nbsp;Ajuda</button>
                 </div>
                 <div class="login-right d-none d-lg-block">
                     <img class="login-banner img-fluid" src="https://images6.alphacoders.com/503/thumb-1920-503480.jpg">

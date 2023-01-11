@@ -7,7 +7,7 @@ RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
 ErrorDocument 404 /canal_start/site/index.php
 
 ## (ROTEAMENTO) GERAL ##
-RewriteRule ^painel?$ admin/login.php
+RewriteRule ^painel?$ admin/index.php
 RewriteRule ^/?$ site/index.php
 RewriteRule ^programacao?$ site/index.php
 RewriteRule ^originais(.+)?$ site/index.php
