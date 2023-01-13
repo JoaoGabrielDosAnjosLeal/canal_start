@@ -19,7 +19,7 @@ function login_form(){
         },
         success: function(validacao){
             if(validacao == "login efetuado"){
-                window.location.href = 'admin/page/dashboard';
+                window.location.href = 'painel/dashboard';
             }
             if(validacao == "login não encontrado"){
                 alert('Seu login não existe em nosso sistema! Caso tenha esquecido seu login entre em contato com o administrador o mais rápido possível.');

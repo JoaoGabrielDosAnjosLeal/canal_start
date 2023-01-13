@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://vjs.zencdn.net/7.20.3/video-js.css">
+</head>
 <body class="body" style="background-color: #EAEAEA;">
 
 <div class="container mt-5">
@@ -34,7 +34,7 @@
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xll-9 mt-5">
             <section class="login d-flex gap-3 mt-4">
                 <div class="login-left p-4">
-                    <img class="login-logo mb-4" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do painel">
+                    <img class="login-logo mb-4" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do Song Ga-Kyeong Panel">
                     <form class="login-form" action="javascript: login_form();">
                         <div class="mb-3">
                             <label for="email" class="form-label"><i class="bi bi-envelope-fill"></i>&nbsp;E-mail</label>

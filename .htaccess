@@ -6,12 +6,16 @@ RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
 ## (ROTEAMENTO) REDIRECIONA TODOS OS URL'S ERRADOS PARA ESTA PÁGINA ##
 ErrorDocument 404 /canal_start/site/index.php
 
-## (ROTEAMENTO) GERAL ##
+## (ROTEAMENTO SITE) GERAL ##
 RewriteRule ^painel?$ admin/index.php
 RewriteRule ^/?$ site/index.php
 RewriteRule ^programacao?$ site/index.php
 RewriteRule ^originais(.+)?$ site/index.php
 RewriteRule ^speednews(.+)?$ site/index.php
+
+## (ROTEAMENTO PAINEL) GERAL ##
+RewriteRule ^painel?$ admin/index.php
+RewriteRule ^painel/dashboard?$ admin/page/base.php
 
 ## COMPRESSAO G-ZIP ##
 <IfModule mod_deflate.c>

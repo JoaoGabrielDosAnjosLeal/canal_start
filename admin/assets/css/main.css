@@ -62,4 +62,61 @@ footer {
   font-size: 0.8rem;
 }
 
+.sidenav {
+  width: 20%;
+  height: 100%;
+  background-color: #EAEAEA;
+}
+.sidenav .sidenav-logo img {
+  width: 8rem;
+  height: auto;
+}
+.sidenav .sidenav-profile img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 22.5rem;
+}
+.sidenav .sidenav-profile h5 {
+  font-family: metropolis-bold;
+  font-size: 1.5rem;
+}
+.sidenav .sidenav-profile h6 {
+  font-family: metropolis-bold;
+  font-size: 1.1rem;
+  color: #adadad;
+}
+.sidenav .sidenav-list a {
+  text-decoration: none;
+}
+.sidenav .sidenav-list a li {
+  padding: 0.7rem 0rem 0.7rem 1rem;
+  list-style: none;
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #000000;
+}
+.sidenav .sidenav-list a li:hover {
+  background-color: #dfdfdf;
+}
+
+.content {
+  width: 80%;
+  height: 3rem;
+  margin: 0rem 0rem 0rem 20%;
+}
+.content .content-bar {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #EAEAEA;
+}
+.content .content-bar button:nth-child(1) {
+  margin: 0.54rem 0rem 0rem 1rem;
+  padding-top: 0.45rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-family: metropolis-bold;
+  font-size: 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */
