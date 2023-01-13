@@ -45,6 +45,7 @@
     </div>
     <ul class="sidenav-list vh-100 mt-3 p-0">
         <a href="#"><li><i class="bi bi-house-fill"></i>&nbsp;Dashboard</li></a>
+        <a href="#"><li><i class="bi bi-person-fill"></i>&nbsp;Meu Perfil</li></a>
         <a href="#"><li><i class="bi bi-pencil-fill"></i>&nbsp;Speed News</li></a>
         <a href="#"><li><i class="bi bi-star-fill"></i>&nbsp;Originais</li></a>
         <a href="#"><li><i class="bi bi-gear-fill"></i>&nbsp;Configurações</li></a>
@@ -56,6 +57,20 @@
     <div class="content-bar">
         <button type="button" class="btn border-0"><i class="bi bi-eye-fill"></i> 0000</button>
         <button type="button" class="btn float-end d-lg-none"><i class="bi bi-list"></i></button>
+    </div>
+    <div class="content-container p-4">
+        <?php 
+            $url =  $_SERVER["REQUEST_URI"];
+            $urlExplode = explode('/', $url);
+            $urlParameter =  $urlExplode[3]; //Parametro único da página ( Tag da categoria )
+           
+            switch($urlParameter){
+                case 'dashboard':
+                    include('dashboard.php');
+                break;
+            }
+            
+        ?>
     </div>
 </section>
 

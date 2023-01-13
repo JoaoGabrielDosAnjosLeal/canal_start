@@ -8,6 +8,10 @@
   src: url(../font/Metropolis-Bold.otf);
   font-display: swap;
 }
+.body {
+  background-color: #dfdfdf;
+}
+
 .login {
   background-color: #ffffff;
   border-radius: 1rem 2rem 2rem 1rem;
@@ -65,7 +69,7 @@ footer {
 .sidenav {
   width: 20%;
   height: 100%;
-  background-color: #EAEAEA;
+  background-color: #ffffff;
 }
 .sidenav .sidenav-logo img {
   width: 8rem;
@@ -96,18 +100,19 @@ footer {
   color: #000000;
 }
 .sidenav .sidenav-list a li:hover {
-  background-color: #dfdfdf;
+  background-color: #EAEAEA;
 }
 
 .content {
   width: 80%;
   height: 3rem;
   margin: 0rem 0rem 0rem 20%;
+  position: fixed;
 }
 .content .content-bar {
   width: 100%;
   height: 3.5rem;
-  background-color: #EAEAEA;
+  background-color: #ffffff;
 }
 .content .content-bar button:nth-child(1) {
   margin: 0.54rem 0rem 0rem 1rem;
@@ -117,6 +122,38 @@ footer {
   color: #ffffff;
   font-family: metropolis-bold;
   font-size: 1rem;
+}
+
+.wellcome {
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+}
+.wellcome h4 {
+  font-family: metropolis-bold;
+  font-size: 1.5rem;
+}
+.wellcome h5 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #adadad;
+}
+.wellcome h6 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+}
+.wellcome button {
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #ffffff;
+}
+.wellcome button:hover {
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */
