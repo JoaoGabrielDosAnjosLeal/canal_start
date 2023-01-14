@@ -59,10 +59,13 @@
         <button type="button" class="btn float-end d-lg-none"><i class="bi bi-list"></i></button>
     </div>
     <div class="content-container p-4">
+        <!--
+            O conteúdo das páginas irá ser carregado dentro dessa div
+        -->
         <?php 
             $url =  $_SERVER["REQUEST_URI"];
             $urlExplode = explode('/', $url);
-            $urlParameter =  $urlExplode[3]; //Parametro único da página ( Tag da categoria )
+            $urlParameter =  $urlExplode[3]; 
            
             switch($urlParameter){
                 case 'dashboard':
