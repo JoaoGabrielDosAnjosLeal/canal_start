@@ -15,16 +15,16 @@
     <title>Canal START | Song Ga-Kyeong Panel</title>
     <link rel="icon" type="image/x-icon" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/favicon.ico">
     <!--preload-->
-    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.min.css" as="style">
+    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
     <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
 
-    <link rel="preload" href="https://code.jquery.com/jquery-3.6.1.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" as="script">
-    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video.min.js" as="script">
-    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.min.js" as="script">
+    <link rel="prefetch" href="https://code.jquery.com/jquery-3.6.1.min.js">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js">
+    <link rel="prefetch" href="https://vjs.zencdn.net/7.20.3/video.min.js">
+    <link rel="prefetch" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.js">
 
     <!--css--> 
     <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.css">
@@ -35,10 +35,11 @@
 <body class="body">
 
 <nav class="sidenav vh-100 position-fixed pt-4">
-    <div class="w-100 sidenav-logo d-flex justify-content-center">
+    <button class="sidenav-close btn btn-primary d-lg-none p-0"><i class="bi bi-x"></i></button>
+    <div class="sidenav-logo w-100 d-flex justify-content-center mt-4">
         <img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/logo.webp" alt="Logo do Song Ga-Kyeong Panel">
     </div>
-    <div class="w-100 sidenav-profile d-flex flex-wrap justify-content-center mt-4">
+    <div class="sidenav-profile w-100 d-flex flex-wrap justify-content-center mt-4">
         <img src="https://i.pinimg.com/564x/3f/9d/d0/3f9dd01a974671f3cabd6df98c0365bd.jpg" alt="Avatar do usuário">
         <h5 class="w-100 text-center m-0 mt-3">Takashi</h5>
         <h6 class="w-100 text-center m-0">Antônio Medeiros Lopes</h6>
@@ -55,8 +56,9 @@
 
 <section class="content">
     <div class="content-bar">
-        <button type="button" class="btn border-0"><i class="bi bi-eye-fill"></i> 0000</button>
-        <button type="button" class="btn float-end d-lg-none"><i class="bi bi-list"></i></button>
+        <img class="d-lg-none" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/favicon.ico" alt="Logo do Song Ga-Kyeong Panel">
+        <div class="btn border-0"><i class="bi bi-eye-fill"></i> 0000</div>
+        <button type="button" class="sidenav-toggle btn float-end d-lg-none border-0"><i class="bi bi-list"></i></button>
     </div>
     <div class="content-container p-4">
         <!--

@@ -3,7 +3,6 @@ $('.login-help').click(function(){
     alert('Está perdido? Para obter ajuda de qualquer tipo entre em contato com o administrador ou desenvolvedor o mas rápido possível!');
 });
 
-
 function login_form(){
     const loginForm = document.querySelector('.login-form');
     
@@ -27,3 +26,8 @@ function login_form(){
         }
     });
 }
+
+//****** SIDEBAR *******
+$('.sidenav-toggle, .sidenav-close').click(function(){
+    $(".sidenav").animate({width:'toggle'}, 500);
+});

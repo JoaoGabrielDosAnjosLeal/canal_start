@@ -22,7 +22,7 @@
             </section>
         </div>
         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xll-5">
-            <section class="server">
+            <section class="server mt-3 mt-lg-0">
                 <h6 class="text-uppercase m-0"><i class="bi bi-hdd-stack-fill"></i>&nbsp;Dados do servidor:</h6>
                 <p>
                     <b>Domínio:</b> <?php echo $_SERVER['HTTP_HOST'];?><br>

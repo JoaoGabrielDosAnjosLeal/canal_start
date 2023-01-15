@@ -70,6 +70,35 @@ footer {
   width: 20%;
   height: 100%;
   background-color: #ffffff;
+  z-index: 3;
+}
+@media (max-width: 992px) {
+  .sidenav {
+    width: 40%;
+    right: 0;
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .sidenav {
+    width: 45%;
+  }
+}
+@media (max-width: 576px) {
+  .sidenav {
+    width: 55%;
+  }
+}
+@media (max-width: 420px) {
+  .sidenav {
+    width: 80%;
+  }
+}
+.sidenav .sidenav-close {
+  width: 2rem;
+  height: 2rem;
+  margin: 0rem 0rem 0rem 0.8rem;
+  font-size: 1.2rem;
 }
 .sidenav .sidenav-logo img {
   width: 8rem;
@@ -108,6 +137,12 @@ footer {
   height: 3rem;
   margin: 0rem 0rem 0rem 20%;
 }
+@media (max-width: 992px) {
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+}
 .content .content-bar {
   width: 100%;
   height: 3.5rem;
@@ -115,7 +150,11 @@ footer {
   position: fixed;
   z-index: 1;
 }
-.content .content-bar button:nth-child(1) {
+.content .content-bar img {
+  width: 2rem;
+  margin: 0.35rem 0rem 0rem 1rem;
+}
+.content .content-bar div {
   margin: 0.54rem 0rem 0rem 1rem;
   padding-top: 0.45rem;
   background-color: #dc0000;
@@ -123,6 +162,10 @@ footer {
   color: #ffffff;
   font-family: metropolis-bold;
   font-size: 1rem;
+}
+.content .content-bar button {
+  margin: 0rem 0.5rem 0rem 0rem;
+  font-size: 1.7rem;
 }
 
 .page-start {
