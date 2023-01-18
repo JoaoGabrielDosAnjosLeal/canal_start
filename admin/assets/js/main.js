@@ -17,11 +17,18 @@ function login_form(){
             'senha': loginSenha
         },
         success: function(validacao){
-            if(validacao == "login efetuado"){
-                window.location.href = 'painel/dashboard';
-            }
-            if(validacao == "login não encontrado"){
-                alert('Seu login não existe em nosso sistema! Caso tenha esquecido seu login entre em contato com o administrador o mais rápido possível.');
+            switch(validacao){
+                case "sucesso":
+                    window.location.href = "painel/inicio";
+                break;
+                case "error":
+                    alert("Seu login não foi encontrado! Verifique os dados e tente novamente.");
+                break;
+                default:
+                    alert("Ocorreu um erro ao validar o login! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                break;
+
             }
         }
     });
@@ -31,3 +38,65 @@ function login_form(){
 $('.sidenav-toggle, .sidenav-close').click(function(){
     $(".sidenav").animate({width:'toggle'}, 500);
 });
+
+//****** EDITAR PERFIL *******
+function profile_edit(){
+    const profileEdit = document.querySelector('.profileEdit-form');
+    const profileEdit_id = profileEdit.id.value;
+    const profileEdit_email = profileEdit.email.value;
+    const profileEdit_senha = profileEdit.senha.value;
+    const profileEdit_name = profileEdit.nome.value;
+    const profileEdit_nick = profileEdit.apelido.value;
+    const profileEdit_avatar = profileEdit.avatar.files[0];
+
+    if(profileEdit_avatar == undefined){
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/profile.php?avatar=no',
+            data: {
+                'id': profileEdit_id,
+                'email': profileEdit_email, 
+                'senha': profileEdit_senha,
+                'nome': profileEdit_name,
+                'apelido': profileEdit_nick
+            },
+            success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("Seu perfil foi atualizado com sucesso!");
+                    location.reload();
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+    }else{
+        const avatarblob = new FileReader();
+        avatarblob.readAsDataURL(profileEdit_avatar);
+        avatarblob.onload = function(){
+            const avatar = avatarblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/profile.php?avatar=yes',
+                data: {
+                    'id': profileEdit_id,
+                    'email': profileEdit_email, 
+                    'senha': profileEdit_senha,
+                    'nome': profileEdit_name,
+                    'apelido': profileEdit_nick,
+                    'avatar': avatar
+                },
+                success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("Seu perfil foi atualizado com sucesso!");
+                        location.reload();
+                    }
+                    else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }
+    }
+}

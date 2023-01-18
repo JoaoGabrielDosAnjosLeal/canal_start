@@ -1,11 +1,10 @@
 <?php 
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'start';
+$host = "mysql:host=localhost;dbname=start";
+$username = "root";
+$password = "";
 
-$conn = mysqli_connect($server, $username, $password, $database);
-
-if(!$conn){
-    die('Erro de conexão ao banco de dados: '.mysqli_connect_error());
+try{
+    $conn = new PDO($host, $username, $password);
+}catch( PDOException $Exception ){
+    die('Erro: '.$Exception);
 }

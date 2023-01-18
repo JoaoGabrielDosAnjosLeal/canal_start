@@ -1,3 +1,16 @@
+<?php 
+    include('../../connect.php');
+    session_start();
+    if(!$_SESSION['email']){
+        header('Location: /canal_start/painel');
+    }
+
+    $logged = $_SESSION['email'];
+    $busca_user = $conn->prepare("SELECT * FROM usuarios WHERE email=:sessionLogged");
+    $busca_user->bindParam(":sessionLogged", $logged);
+    $busca_user->execute() or die($busca_user->erroInfo());
+    $exibe_busca_user = $busca_user->fetch();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,12 +33,12 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
     <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
 
-    <link rel="prefetch" href="https://code.jquery.com/jquery-3.6.1.min.js">
-    <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js">
-    <link rel="prefetch" href="https://vjs.zencdn.net/7.20.3/video.min.js">
-    <link rel="prefetch" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.js">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.6.1.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video.min.js" as="script">
+    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.js" as="script">
 
+    <link rel="preconnect" href="https://stmv1.srvif.com/canalstart/canalstart/playlist.m3u8">
     <!--css--> 
     <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
@@ -34,29 +47,45 @@
 </head>
 <body class="body">
 
-<nav class="sidenav vh-100 position-fixed pt-4">
+<nav class="sidenav position-fixed pt-lg-1 pt-4">
     <button class="sidenav-close btn btn-primary d-lg-none p-0"><i class="bi bi-x"></i></button>
     <div class="sidenav-logo w-100 d-flex justify-content-center mt-4">
-        <img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/logo.webp" alt="Logo do Song Ga-Kyeong Panel">
+        <img src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/logo.webp">
     </div>
     <div class="sidenav-profile w-100 d-flex flex-wrap justify-content-center mt-4">
-        <img src="https://i.pinimg.com/564x/3f/9d/d0/3f9dd01a974671f3cabd6df98c0365bd.jpg" alt="Avatar do usuário">
-        <h5 class="w-100 text-center m-0 mt-3">Takashi</h5>
-        <h6 class="w-100 text-center m-0">Antônio Medeiros Lopes</h6>
+        <img src="<?php echo $exibe_busca_user['avatar']; ?>">
+        <h5 class="w-100 text-center m-0 mt-3"><?php echo $exibe_busca_user['apelido']; ?></h5>
+        <h6 class="w-100 text-center m-0"><?php echo $exibe_busca_user['nome']; ?></h6>
     </div>
     <ul class="sidenav-list vh-100 mt-3 p-0">
-        <a href="#"><li><i class="bi bi-house-fill"></i>&nbsp;Dashboard</li></a>
-        <a href="#"><li><i class="bi bi-person-fill"></i>&nbsp;Meu Perfil</li></a>
-        <a href="#"><li><i class="bi bi-pencil-fill"></i>&nbsp;Speed News</li></a>
-        <a href="#"><li><i class="bi bi-star-fill"></i>&nbsp;Originais</li></a>
-        <a href="#"><li><i class="bi bi-gear-fill"></i>&nbsp;Configurações</li></a>
-        <a href="#"><li><i class="bi bi-door-open-fill"></i>&nbsp;Deslogar</li></a>
+        <li onclick="window.location.href='inicio'"><i class="bi bi-house-fill"></i>&nbsp;Inicio</li>
+        <li onclick="window.location.href='perfil'"><i class="bi bi-person-fill"></i>&nbsp;Meu Perfil</li>
+        <li><i class="bi bi-pencil-fill"></i>&nbsp;Speed News
+            <ul>
+                <li>Criar speed news</li>
+                <li>Todos os speed news</li>
+            </ul>
+        </li>
+        <li><i class="bi bi-star-fill"></i>&nbsp;Originais
+            <ul>
+                <li>Criar original</li>
+                <li>Todos os originais</li>
+            </ul>
+        </li>
+        <li><i class="bi bi-gear-fill"></i>&nbsp;Configurações
+            <ul>
+                <li>Gerênciar usuários</li>
+                <li>Gerênciar aparência do site</li>
+                <li>Gêrenciar divulgação</li>
+            </ul>
+        </li>
+        <li><i class="bi bi-door-open-fill"></i>&nbsp;Deslogar</li>
     </ul>
 </nav>
 
 <section class="content">
     <div class="content-bar">
-        <img class="d-lg-none" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/favicon.ico" alt="Logo do Song Ga-Kyeong Panel">
+        <img class="d-lg-none" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/img/favicon.ico">
         <div class="btn border-0"><i class="bi bi-eye-fill"></i> 0000</div>
         <button type="button" class="sidenav-toggle btn float-end d-lg-none border-0"><i class="bi bi-list"></i></button>
     </div>
@@ -70,13 +99,21 @@
             $urlParameter =  $urlExplode[3]; 
            
             switch($urlParameter){
-                case 'dashboard':
+                case 'inicio':
                     include('dashboard.php');
+                break;
+                case 'perfil':
+                    include('profile.php');
                 break;
             }
             
         ?>
     </div>
+
+    <footer class="w-100 position-relative text-center text-uppercase bottom-3">
+        Start | Song Ga-Kyeong Panel - Versão 1.0<br>
+        Planejamento e desenvolvimento por João Gabriel
+    </footer>
 </section>
 
 <!--javascript-->

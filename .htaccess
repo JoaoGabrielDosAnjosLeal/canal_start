@@ -15,7 +15,8 @@ RewriteRule ^speednews(.+)?$ site/index.php
 
 ## (ROTEAMENTO PAINEL) GERAL ##
 RewriteRule ^painel?$ admin/index.php
-RewriteRule ^painel/dashboard?$ admin/page/base.php
+RewriteRule ^painel/inicio?$ admin/page/base.php
+RewriteRule ^painel/perfil(.+)?$ admin/page/base.php
 
 ## COMPRESSAO G-ZIP ##
 <IfModule mod_deflate.c>

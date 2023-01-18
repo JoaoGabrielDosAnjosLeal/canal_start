@@ -1,18 +1,18 @@
 <?php 
-session_start();
-require('../../connect.php');
+include('../../connect.php');
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$senha = mysqli_real_escape_string($conn, $_POST['senha']);
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 
-$buscaUser = "SELECT * FROM usuario WHERE email='{$email}' and senha='{$senha}'";
-$resultado_buscaUser = mysqli_query($conn, $buscaUser);
-$total_buscaUser = mysqli_num_rows($resultado_buscaUser);
+$busca_user = $conn->prepare("SELECT * FROM usuarios WHERE email=:userEmail and senha=:userPass");
+$busca_user->bindParam(":userEmail", $email);
+$busca_user->bindParam(":userPass", $senha);
+$busca_user->execute() or die($busca_user->erroInfo());
 
-if($total_buscaUser == 1){
+if($busca_user->rowCount() > 0){
+    session_start();
     $_SESSION['email'] = $email;
-    echo "login efetuado";
+    echo "sucesso";
 }else{
-    $_SESSION['nao_autenticado'] = true;
-    echo "login não encontrado";
+    echo "error"; 
 }

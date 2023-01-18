@@ -31,6 +31,7 @@
   border-radius: 0.5rem;
 }
 .login .login-left .login-form button {
+  padding-top: 0.49rem;
   background-color: #003399;
   font-family: metropolis-bold;
   color: #ffffff;
@@ -67,31 +68,21 @@ footer {
 }
 
 .sidenav {
-  width: 20%;
-  height: 100%;
+  width: 16rem;
+  height: 100vh;
   background-color: #ffffff;
   z-index: 3;
 }
 @media (max-width: 992px) {
   .sidenav {
-    width: 40%;
+    width: 20rem;
     right: 0;
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .sidenav {
-    width: 45%;
-  }
-}
-@media (max-width: 576px) {
-  .sidenav {
-    width: 55%;
-  }
-}
 @media (max-width: 420px) {
   .sidenav {
-    width: 80%;
+    width: 100%;
   }
 }
 .sidenav .sidenav-close {
@@ -108,6 +99,7 @@ footer {
   width: 6rem;
   height: 6rem;
   border-radius: 22.5rem;
+  object-fit: cover;
 }
 .sidenav .sidenav-profile h5 {
   font-family: metropolis-bold;
@@ -115,31 +107,43 @@ footer {
 }
 .sidenav .sidenav-profile h6 {
   font-family: metropolis-bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #adadad;
 }
-.sidenav .sidenav-list a {
-  text-decoration: none;
-}
-.sidenav .sidenav-list a li {
-  padding: 0.7rem 0rem 0.7rem 1rem;
-  list-style: none;
+.sidenav .sidenav-list li {
+  cursor: pointer;
+  padding: 0.8rem 0rem 0.8rem 1rem;
+  color: #000000;
   font-family: metropolis-bold;
   font-size: 1rem;
-  color: #000000;
 }
-.sidenav .sidenav-list a li:hover {
-  background-color: #EAEAEA;
+.sidenav .sidenav-list li ul {
+  width: 15rem;
+  display: none;
+  position: absolute;
+  background-color: #dfdfdf;
+  border-radius: 0.5rem;
+  margin: -2rem 0rem 0rem 5rem;
+  padding: 0.5rem;
+}
+@media (max-width: 992px) {
+  .sidenav .sidenav-list li ul {
+    margin: -3rem 0rem 0rem 5rem;
+  }
+}
+.sidenav .sidenav-list li ul li {
+  list-style: none;
+  padding: 0.3rem;
+}
+.sidenav .sidenav-list li:hover ul {
+  display: block;
 }
 
 .content {
-  width: 80%;
-  height: 3rem;
-  margin: 0rem 0rem 0rem 20%;
+  margin: 0rem 0rem 0rem 16rem;
 }
 @media (max-width: 992px) {
   .content {
-    width: 100%;
     margin: 0;
   }
 }
@@ -243,6 +247,34 @@ footer {
 }
 .server p span {
   font-family: metropolis-bold;
+}
+
+.profileEdit {
+  width: 25rem;
+}
+@media (max-width: 992px) {
+  .profileEdit {
+    width: 100%;
+  }
+}
+.profileEdit .profileEdit-form div label {
+  font-family: metropolis-bold;
+}
+.profileEdit .profileEdit-form div input {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+}
+.profileEdit .profileEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.profileEdit .profileEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */

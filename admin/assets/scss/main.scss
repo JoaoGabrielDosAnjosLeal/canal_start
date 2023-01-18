@@ -39,6 +39,7 @@
                 }
             }
             button{
+                padding-top: 0.49rem;
                 background-color: $azul-medio-01;
                 font-family: metropolis-bold;
                 color: $branco;
@@ -78,23 +79,17 @@ footer{
 
 //**********NAVBAR**********
 .sidenav{
-    width: 20%;
-    height: 100%;
+    width: 16rem;
+    height: 100vh;
     background-color: $branco;
     z-index: 3;
     @include lg{
-        width: 40%;
+        width: 20rem;
         right: 0;
         display: none;
     }
-    @include md{
-        width: 45%;
-    }
-    @include sm{
-        width: 55%;
-    }
     @include xs{
-        width: 80%;
+        width: 100%;
     }
     .sidenav-close{
         width: 2rem;
@@ -113,6 +108,7 @@ footer{
             width: 6rem;
             height: 6rem;
             border-radius: 22.5rem;
+            object-fit: cover;
         }
         h5{
             font-family: metropolis-bold;
@@ -120,21 +116,36 @@ footer{
         }
         h6{
             font-family: metropolis-bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: $cinza-medio-01;
         }
     }
     .sidenav-list{
-        a{
-            text-decoration: none;
-            li{
-                padding: 0.7rem 0rem 0.7rem 1rem;
-                list-style: none;
-                font-family: metropolis-bold;
-                font-size: 1rem;
-                color: $preto;
-                &:hover{
-                    background-color: $cinza-claro-02;
+        li{
+            cursor: pointer;
+            padding: 0.8rem 0rem 0.8rem 1rem;
+            color: $preto;
+            font-family: metropolis-bold;
+            font-size: 1rem;
+            ul{
+                width: 15rem;
+                display: none;
+                position: absolute;
+                background-color: $cinza-claro-01;
+                border-radius: 0.5rem;
+                margin: -2rem 0rem 0rem 5rem;
+                padding: 0.5rem;
+                @include lg{
+                    margin: -3rem 0rem 0rem 5rem;
+                }
+                li{
+                    list-style: none;
+                    padding: 0.3rem;
+                }
+            }
+            &:hover{
+                ul{
+                    display: block;
                 }
             }
         }
@@ -143,11 +154,8 @@ footer{
 
 //**********CONTEÚDO PADRÃO**********
 .content{
-    width: 80%;
-    height: 3rem;
-    margin: 0rem 0rem 0rem 20%;
+    margin: 0rem 0rem 0rem 16rem;
     @include lg{
-        width: 100%;
         margin: 0;
     }
     .content-bar{
@@ -252,6 +260,37 @@ footer{
         font-size: 1rem;
         span{
             font-family: metropolis-bold;
+        }
+    }
+}
+
+//**********EDITAR PERFIL**********
+.profileEdit{
+    width: 25rem;
+    @include lg{
+        width: 100%;
+    }
+    .profileEdit-form{
+        div{
+            label{
+                font-family: metropolis-bold;
+            }
+            input{
+                margin: -0.3rem 0rem 0rem 0rem;
+                border-radius: 0.5rem;
+            }
+        }
+        button{
+            padding-top: 0.49rem;
+            background-color: $azul-medio-01;
+            font-family: metropolis-bold;
+            color: $branco;
+            font-size: 1rem;
+            &:hover{
+                background-color: $azul-medio-01;
+                font-family: metropolis-bold;
+                color: $branco;  
+            }
         }
     }
 }
