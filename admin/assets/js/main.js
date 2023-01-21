@@ -45,8 +45,8 @@ function profile_edit(){
     const profileEdit_id = profileEdit.id.value;
     const profileEdit_email = profileEdit.email.value;
     const profileEdit_senha = profileEdit.senha.value;
-    const profileEdit_name = profileEdit.nome.value;
-    const profileEdit_nick = profileEdit.apelido.value;
+    const profileEdit_nome = profileEdit.nome.value;
+    const profileEdit_apelido = profileEdit.apelido.value;
     const profileEdit_avatar = profileEdit.avatar.files[0];
 
     if(profileEdit_avatar == undefined){
@@ -57,8 +57,8 @@ function profile_edit(){
                 'id': profileEdit_id,
                 'email': profileEdit_email, 
                 'senha': profileEdit_senha,
-                'nome': profileEdit_name,
-                'apelido': profileEdit_nick
+                'nome': profileEdit_nome,
+                'apelido': profileEdit_apelido
             },
             success: function(validacao){
                 if(validacao == "sucesso"){
@@ -82,8 +82,8 @@ function profile_edit(){
                     'id': profileEdit_id,
                     'email': profileEdit_email, 
                     'senha': profileEdit_senha,
-                    'nome': profileEdit_name,
-                    'apelido': profileEdit_nick,
+                    'nome': profileEdit_nome,
+                    'apelido': profileEdit_apelido,
                     'avatar': avatar
                 },
                 success: function(validacao){
@@ -99,4 +99,180 @@ function profile_edit(){
             });
         }
     }
+}
+
+//****** SPEED NEWS *******
+function speedNews_create(){
+    const speedNewsForm = document.querySelector('.speedNewsEdit-form');
+    const speedNews_titulo = speedNewsForm.titulo.value;
+    const speedNews_hashtag = speedNewsForm.hashtag.value;
+    const speedNews_conteudo = speedNewsForm.conteudo.value;
+    const speedNews_thumb = speedNewsForm.thumb.files[0];
+
+   const thumbblob = new FileReader();
+   thumbblob.readAsDataURL(speedNews_thumb);
+   thumbblob.onload = function(){
+        const thumb = thumbblob.result;
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/speednews.php?model=create',
+            data: {
+                'titulo': speedNews_titulo,
+                'hashtag': speedNews_hashtag, 
+                'conteudo': speedNews_conteudo,
+                'thumb': thumb
+            },success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("Seu speed news foi publicado com sucesso!");
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+   }
+}
+
+function speedNews_edit(){
+    const speedNewsForm = document.querySelector('.speedNewsEdit-form');
+    const speedNews_id = speedNewsForm.id.value;
+    const speedNews_titulo = speedNewsForm.titulo.value;
+    const speedNews_hashtag = speedNewsForm.hashtag.value;
+    const speedNews_conteudo = speedNewsForm.conteudo.value;
+    const speedNews_thumb = speedNewsForm.thumb.files[0];
+
+    if(speedNews_thumb == undefined){
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/speednews.php?model=edit&thumb=no',
+            data: {
+                'id': speedNews_id,
+                'titulo': speedNews_titulo,
+                'hashtag': speedNews_hashtag, 
+                'conteudo': speedNews_conteudo,
+            },success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("Seu speed news foi editado com sucesso!");
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+    }else{
+        const thumbblob = new FileReader();
+        thumbblob.readAsDataURL(speedNews_thumb);
+        thumbblob.onload = function(){
+        const thumb = thumbblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/speednews.php?model=edit&thumb=yes',
+                data: {
+                    'id': speedNews_id,
+                    'titulo': speedNews_titulo,
+                    'hashtag': speedNews_hashtag, 
+                    'conteudo': speedNews_conteudo,
+                    'thumb': thumb
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("Seu speed news foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
+}
+
+//****** PROGRAMAS *******
+function programa_cadastra(){
+    const programaForm = document.querySelector('.scheduleEdit-form');
+    const programaNome = programaForm.nome.value;
+    const programaHorario = programaForm.horario.value;
+    const programaPeriodo = programaForm.periodo.value;
+    const programaDestaque = programaForm.destaque.value;
+    const programaThumb = programaForm.thumb.files[0];
+
+    const thumbblob = new FileReader();
+    thumbblob.readAsDataURL(programaThumb);
+    thumbblob.onload = function(){
+    const thumb = thumbblob.result;
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/programacao.php?model=create',
+            data: {
+                'nome': programaNome,
+                'horario': programaHorario, 
+                'periodo': programaPeriodo,
+                'destaque': programaDestaque,
+                'thumb': thumb
+            },success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("O programa foi criado com sucesso!");
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+    }   
+
+}
+
+function programa_edita(){
+    const programaForm = document.querySelector('.scheduleEdit-form');
+    const programaId = programaForm.id.value;
+    const programaNome = programaForm.nome.value;
+    const programaHorario = programaForm.horario.value;
+    const programaPeriodo = programaForm.periodo.value;
+    const programaDestaque = programaForm.destaque.value;
+    const programaThumb = programaForm.thumb.files[0];
+
+    if(programaThumb == undefined){
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/programacao.php?model=edit&thumb=no',
+            data: {
+                'id': programaId,
+                'nome': programaNome,
+                'horario': programaHorario, 
+                'periodo': programaPeriodo,
+                'destaque': programaDestaque
+            },success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("O programa foi editado com sucesso!");
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+    }else{
+        const thumbblob = new FileReader();
+        thumbblob.readAsDataURL(programaThumb);
+        thumbblob.onload = function(){
+        const thumb = thumbblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/programacao.php?model=edit&thumb=yes',
+                data: {
+                    'id': programaId,
+                    'nome': programaNome,
+                    'horario': programaHorario, 
+                    'periodo': programaPeriodo,
+                    'destaque': programaDestaque,
+                    'thumb': thumb
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O programa foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }   
 }

@@ -187,6 +187,10 @@
   bottom: 1rem;
   color: #ffffff;
 }
+.speedNews .speedNews-section .speedNews-article .speedNews-view:hover {
+  background-color: rgba(0, 128, 255, 0.5);
+  color: #ffffff;
+}
 .speedNews .speedNews-plus button {
   border-radius: 0.5rem;
   font-family: aquawax;

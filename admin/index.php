@@ -37,11 +37,11 @@
                     <img class="login-logo mb-4" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/logo.webp" alt="Logo do Song Ga-Kyeong Panel">
                     <form class="login-form" action="javascript: login_form();">
                         <div class="mb-3">
-                            <label for="email" class="form-label"><i class="bi bi-envelope-fill"></i>&nbsp;E-mail</label>
+                            <label for="email" class="form-label"><i class="bi bi-envelope"></i>&nbsp;E-mail</label>
                             <input type="email" name="email" class="form-control shadow-none" id="email" aria-label="email" placeholder="Fuslie" required>
                         </div>
                         <div class="mb-4">
-                            <label for="senha" class="form-label"><i class="bi bi-key-fill"></i>&nbsp;Senha</label>
+                            <label for="senha" class="form-label"><i class="bi bi-key"></i>&nbsp;Senha</label>
                             <input type="password" name="senha" class="form-control shadow-none" id="senha" aria-label="senha" placeholder="•••••••••" required>
                         </div>
                         <button type="submit" class="btn w-100 text-uppercase"><i class="bi bi-box-arrow-in-right"></i>&nbsp;Entrar</button>

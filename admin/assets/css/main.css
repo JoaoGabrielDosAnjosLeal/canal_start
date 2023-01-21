@@ -12,6 +12,10 @@
   background-color: #dfdfdf;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .login {
   background-color: #ffffff;
   border-radius: 1rem 2rem 2rem 1rem;
@@ -71,7 +75,7 @@ footer {
   width: 16rem;
   height: 100vh;
   background-color: #ffffff;
-  z-index: 3;
+  z-index: 1;
 }
 @media (max-width: 992px) {
   .sidenav {
@@ -88,7 +92,7 @@ footer {
 .sidenav .sidenav-close {
   width: 2rem;
   height: 2rem;
-  margin: 0rem 0rem 0rem 0.8rem;
+  margin: 4rem 0rem 0rem 0.8rem;
   font-size: 1.2rem;
 }
 .sidenav .sidenav-logo img {
@@ -111,8 +115,9 @@ footer {
   color: #adadad;
 }
 .sidenav .sidenav-list li {
+  position: relative;
   cursor: pointer;
-  padding: 0.8rem 0rem 0.8rem 1rem;
+  padding: 0.6rem 0rem 0.6rem 1rem;
   color: #000000;
   font-family: metropolis-bold;
   font-size: 1rem;
@@ -121,44 +126,43 @@ footer {
   width: 15rem;
   display: none;
   position: absolute;
-  background-color: #dfdfdf;
+  background-color: #EAEAEA;
   border-radius: 0.5rem;
   margin: -2rem 0rem 0rem 5rem;
   padding: 0.5rem;
+  z-index: 1;
 }
 @media (max-width: 992px) {
   .sidenav .sidenav-list li ul {
-    margin: -3rem 0rem 0rem 5rem;
+    margin: -3rem 0rem 0rem 6rem;
   }
 }
 .sidenav .sidenav-list li ul li {
-  list-style: none;
   padding: 0.3rem;
+  list-style: none;
+  font-size: 0.9rem;
 }
 .sidenav .sidenav-list li:hover ul {
   display: block;
 }
 
-.content {
+.top-bar {
+  width: auto;
+  height: 3.5rem;
   margin: 0rem 0rem 0rem 16rem;
+  background-color: #ffffff;
+  z-index: 1;
 }
 @media (max-width: 992px) {
-  .content {
+  .top-bar {
     margin: 0;
   }
 }
-.content .content-bar {
-  width: 100%;
-  height: 3.5rem;
-  background-color: #ffffff;
-  position: fixed;
-  z-index: 1;
-}
-.content .content-bar img {
+.top-bar img {
   width: 2rem;
   margin: 0.35rem 0rem 0rem 1rem;
 }
-.content .content-bar div {
+.top-bar div {
   margin: 0.54rem 0rem 0rem 1rem;
   padding-top: 0.45rem;
   background-color: #dc0000;
@@ -167,9 +171,21 @@ footer {
   font-family: metropolis-bold;
   font-size: 1rem;
 }
-.content .content-bar button {
+.top-bar button {
   margin: 0rem 0.5rem 0rem 0rem;
   font-size: 1.7rem;
+}
+
+.content {
+  width: auto;
+  height: auto;
+  margin: 0rem 0rem 0rem 16rem;
+  padding: 4.5rem 2rem 0rem 2rem;
+}
+@media (max-width: 992px) {
+  .content {
+    margin: 0;
+  }
 }
 
 .page-start {
@@ -250,7 +266,7 @@ footer {
 }
 
 .profileEdit {
-  width: 25rem;
+  width: 30rem;
 }
 @media (max-width: 992px) {
   .profileEdit {
@@ -274,6 +290,266 @@ footer {
 .profileEdit .profileEdit-form button:hover {
   background-color: #003399;
   font-family: metropolis-bold;
+  color: #ffffff;
+}
+
+.speedNewsEdit {
+  width: 30rem;
+}
+@media (max-width: 992px) {
+  .speedNewsEdit {
+    width: 100%;
+  }
+}
+.speedNewsEdit .speedNewsEdit-form div label {
+  font-family: metropolis-bold;
+}
+.speedNewsEdit .speedNewsEdit-form div input, .speedNewsEdit .speedNewsEdit-form div textarea {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+  resize: none;
+}
+.speedNewsEdit .speedNewsEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.speedNewsEdit .speedNewsEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+}
+
+.speedNews-list article {
+  width: 30.9rem;
+  height: 15rem;
+}
+.speedNews-list article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  filter: brightness(50%);
+}
+.speedNews-list article p {
+  width: 95%;
+  top: 1rem;
+  left: 1rem;
+  color: #ffffff;
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  text-shadow: 0px 0px 3px #000000;
+}
+.speedNews-list article p span {
+  padding: 0.3rem;
+  background-color: #003399;
+  border-radius: 0.3rem;
+  color: #ffffff;
+}
+@media (max-width: 420px) {
+  .speedNews-list article p {
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7; /* Definimos quantas linhas queremos */
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+}
+.speedNews-list article div {
+  bottom: 1rem;
+  left: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: metropolis-bold;
+  text-shadow: 0px 0px 3px #000000;
+}
+.speedNews-list article button:nth-child(4) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #003399;
+  border-radius: 0.5rem;
+  right: 1rem;
+  bottom: 1rem;
+  color: #ffffff;
+}
+.speedNews-list article button:nth-child(4):hover {
+  background-color: #003399;
+  color: #ffffff;
+}
+.speedNews-list article button:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  right: 3.5rem;
+  bottom: 1rem;
+  color: #ffffff;
+}
+.speedNews-list article button:nth-child(5):hover {
+  background-color: #dc0000;
+  color: #ffffff;
+}
+
+.scheduleEdit {
+  width: 30rem;
+}
+@media (max-width: 992px) {
+  .scheduleEdit {
+    width: 100%;
+  }
+}
+.scheduleEdit .scheduleEdit-form div label {
+  font-family: metropolis-bold;
+}
+.scheduleEdit .scheduleEdit-form div input, .scheduleEdit .scheduleEdit-form div select {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+  resize: none;
+}
+.scheduleEdit .scheduleEdit-form div div label {
+  padding: -3rem 0rem 0rem 0rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.scheduleEdit .scheduleEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.scheduleEdit .scheduleEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+}
+
+.scheduleList div {
+  width: 20.2rem;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+.scheduleList div div img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+.scheduleList div h5 {
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1.3rem;
+}
+.scheduleList div h6 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #adadad;
+}
+.scheduleList div button:nth-child(4) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #003399;
+  border-radius: 0.5rem;
+  margin: 0rem 1rem 0rem 0rem;
+  color: #ffffff;
+}
+.scheduleList div button:nth-child(4):hover {
+  background-color: #003399;
+  color: #ffffff;
+}
+.scheduleList div button:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  margin: 0rem 0.5rem 0rem 0rem;
+  color: #ffffff;
+}
+.scheduleList div button:nth-child(5):hover {
+  background-color: #dc0000;
+  color: #ffffff;
+}
+
+.originalEdit {
+  width: 30rem;
+}
+@media (max-width: 992px) {
+  .originalEdit {
+    width: 100%;
+  }
+}
+.originalEdit .originalEdit-form div label {
+  font-family: metropolis-bold;
+}
+.originalEdit .originalEdit-form div input, .originalEdit .originalEdit-form div select {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+  resize: none;
+}
+.originalEdit .originalEdit-form div div label {
+  padding: -3rem 0rem 0rem 0rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.originalEdit .originalEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.originalEdit .originalEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+}
+
+.originalList div {
+  width: 20.2rem;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 1rem 1rem 0.5rem 0.5rem;
+}
+.originalList div iframe {
+  width: 100%;
+  height: 13rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.originalList div h5 {
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1.3rem;
+}
+.originalList div h6 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #adadad;
+}
+.originalList div button:nth-child(4) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #003399;
+  border-radius: 0.5rem;
+  margin: 0rem 1rem 0rem 0rem;
+  color: #ffffff;
+}
+.originalList div button:nth-child(4):hover {
+  background-color: #003399;
+  color: #ffffff;
+}
+.originalList div button:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  margin: 0rem 0.5rem 0rem 0rem;
+  color: #ffffff;
+}
+.originalList div button:nth-child(5):hover {
+  background-color: #dc0000;
   color: #ffffff;
 }
 
