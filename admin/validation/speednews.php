@@ -24,19 +24,19 @@ if($_GET['model'] == "create"){
     $url_tratamento02 = strtolower($url_tratamento01); // Deixa tudo em minusculo
     $url = $url_tratamento02;
 
-    $publica = $conn->prepare("INSERT INTO speed_news(autor,data,titulo,hashtag,conteudo,thumb,url) VALUES (:postAutor, :postData, :postTitulo, :postHashtag, :postConteudo, :postThumb, :postUrl)");
-    $publica->bindParam(":postAutor", $autor);
-    $publica->bindParam(":postData", $data);
-    $publica->bindParam(":postTitulo", $titulo);
-    $publica->bindParam(":postHashtag", $hashtag);
-    $publica->bindParam(":postConteudo", $conteudo);
-    $publica->bindParam(":postThumb", $thumb);
-    $publica->bindParam(":postUrl", $url);
+    $cadastra = $conn->prepare("INSERT INTO speed_news(autor,data,titulo,hashtag,conteudo,thumb,url) VALUES (:postAutor, :postData, :postTitulo, :postHashtag, :postConteudo, :postThumb, :postUrl)");
+    $cadastra->bindParam(":postAutor", $autor);
+    $cadastra->bindParam(":postData", $data);
+    $cadastra->bindParam(":postTitulo", $titulo);
+    $cadastra->bindParam(":postHashtag", $hashtag);
+    $cadastra->bindParam(":postConteudo", $conteudo);
+    $cadastra->bindParam(":postThumb", $thumb);
+    $cadastra->bindParam(":postUrl", $url);
 
-    if($publica->execute()){
+    if($cadastra->execute()){
         echo "sucesso";
     }else{
-        echo $publica->erroInfo();
+        print_r($cadastra->erroInfo());
     }
 }
 
@@ -61,7 +61,7 @@ if($_GET['model'] == "edit"){
         if($atualiza->execute()){
             echo "sucesso";
         }else{
-            echo $atualiza->erroInfo();
+            print_r($atualiza->erroInfo());
         }
     }
     if($_GET['thumb'] == "yes"){
@@ -83,7 +83,7 @@ if($_GET['model'] == "edit"){
         if($atualiza->execute()){
             echo "sucesso";
         }else{
-            echo $atualiza->erroInfo();
+            print_r($atualiza->erroInfo());
         }
     }
 }
@@ -97,5 +97,7 @@ if($_GET['model'] == "delete"){
 
    if($delete->execute()){
         header('location: /canal_start/painel/speednews/lista');
+   }else{
+        print_r($delete->erroInfo());
    }
 }

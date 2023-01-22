@@ -18,7 +18,7 @@ if($_GET['model'] == "create"){
     if($cadastra->execute()){
         echo "sucesso";
     }else{
-        echo $cadastra->erroInfo();
+        print_r($cadastra->erroInfo());
     }
 }
 
@@ -40,7 +40,7 @@ if($_GET['model'] == "edit"){
         if($atualiza->execute()){
             echo "sucesso";
         }else{
-            echo $atualiza->erroInfo();
+            print_r($atualiza->erroInfo());
         }
     }
     if($_GET['thumb'] == "yes"){
@@ -62,7 +62,7 @@ if($_GET['model'] == "edit"){
         if($atualiza->execute()){
             echo "sucesso";
         }else{
-            echo $atualiza->erroInfo();
+            print_r($atualiza->erroInfo());
         }
     }
 }
@@ -75,5 +75,7 @@ if($_GET['model'] == "delete"){
  
     if($delete->execute()){
          header('location: /canal_start/painel/programacao/lista');
+    }else{
+        print_r($delete->erroInfo());
     }
  }

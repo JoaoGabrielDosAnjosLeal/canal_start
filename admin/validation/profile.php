@@ -41,7 +41,7 @@ if($_GET['avatar'] == "yes"){
     if($atualiza->execute()){
         echo "sucesso";
     }else{
-        echo $atualiza->erroInfo();
+        print_r($atualiza->erroInfo());
     }
 }
 
