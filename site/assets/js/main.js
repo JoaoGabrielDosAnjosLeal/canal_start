@@ -19,8 +19,6 @@ function router(){
     var urlSplit = url.split("/");
     var urlPoint = urlSplit[4] //Marcador da página
     var urlSubPoint01 = urlSplit[5]; //Parametro único
-
-    console.log(urlPoint);
     
     switch(urlPoint){
         case '': case undefined:
