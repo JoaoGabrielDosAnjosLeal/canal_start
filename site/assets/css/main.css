@@ -287,8 +287,18 @@
   font-family: aquawax;
   font-size: 1.5rem;
 }
+.originals-section .originals-container {
+  width: 100%;
+}
 .originals-section .originals-container .originals-content iframe {
+  width: 34rem;
+  height: 22.5rem;
   border-radius: 1rem;
+}
+@media (max-width: 768px) {
+  .originals-section .originals-container .originals-content iframe {
+    width: 100%;
+  }
 }
 .originals-section .originals-container .originals-content .originals-contentTitle {
   color: #ffffff;

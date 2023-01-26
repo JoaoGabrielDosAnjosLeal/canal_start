@@ -20,6 +20,9 @@ RewriteRule ^painel/perfil(.+)?$ admin/page/base.php
 RewriteRule ^painel/programacao(.+)?$ admin/page/base.php
 RewriteRule ^painel/speednews(.+)?$ admin/page/base.php
 RewriteRule ^painel/originais(.+)?$ admin/page/base.php
+RewriteRule ^painel/usuarios(.+)?$ admin/page/base.php
+RewriteRule ^painel/divulgacao(.+)?$ admin/page/base.php
+RewriteRule ^painel/aparencia(.+)?$ admin/page/base.php
 
 ## COMPRESSAO G-ZIP ##
 <IfModule mod_deflate.c>

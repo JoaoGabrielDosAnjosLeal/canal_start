@@ -287,9 +287,15 @@
         font-size: 1.5rem;
     }
     .originals-container{
+        width: 100%;
         .originals-content{
             iframe{
+                width: 34rem;
+                height: 22.5rem;
                 border-radius: 1rem;
+                @include md{
+                    width: 100%;
+                }
             }
             .originals-contentTitle{
                 color: $branco;

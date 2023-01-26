@@ -1,3 +1,6 @@
+<?php 
+    include('../../connect.php');
+?>
 <script defer>
     $('title').text('Canal START | Programação');
 
@@ -44,27 +47,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
             <section class="schedule-section mt-4 mt-lg-5">
                 <h6 class="schedule-title text-center text-uppercase">Segunda a sexta</h6>
-                <div class="schedule-container d-flex gap-3 justify-content-center flex-wrap mt-4">
+                <div class="schedule-container d-flex gap-3 justify-content-start flex-wrap mt-4">
+                <?php
+                    $busca_programacao_semanal = $conn->prepare("SELECT * FROM programacao WHERE periodo='durante a semana' ORDER BY id DESC");
+                    $busca_programacao_semanal->execute();
+
+                    while($exibe_programacao_semanal = $busca_programacao_semanal->fetch()){
+                ?>
                     <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
+                        <img class="schedule-contentThumb rounded-circle" src="<?php echo $exibe_programacao_semanal['thumb']; ?>" loading="lazy" alt="Thumb do programa">
+                        <h5 class="schedule-contentTitle text-uppercase"><?php echo $exibe_programacao_semanal['nome']; ?></h5>
+                        <h6 class="schedule-contentClock"><?php echo $exibe_programacao_semanal['horario']; ?></h6>
                     </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
+                <?php } ?>
                 </div>
             </section>
         </div>
@@ -73,27 +68,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
             <section class="schedule-section mt-4 mb-4">
                 <h6 class="schedule-title text-center text-uppercase">Fim de semana</h6>
-                <div class="schedule-container d-flex gap-3 justify-content-center flex-wrap mt-4">
+                <div class="schedule-container d-flex gap-3 justify-content-start flex-wrap mt-4">
+                <?php
+                    $busca_programacao_semanal = $conn->prepare("SELECT * FROM programacao WHERE periodo='fim de semana' ORDER BY id DESC");
+                    $busca_programacao_semanal->execute();
+
+                    while($exibe_programacao_semanal = $busca_programacao_semanal->fetch()){
+                ?>
                     <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
+                        <img class="schedule-contentThumb rounded-circle" src="<?php echo $exibe_programacao_semanal['thumb']; ?>" loading="lazy" alt="Thumb do programa">
+                        <h5 class="schedule-contentTitle text-uppercase"><?php echo $exibe_programacao_semanal['nome']; ?></h5>
+                        <h6 class="schedule-contentClock"><?php echo $exibe_programacao_semanal['horario']; ?></h6>
                     </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
-                    <div class="schedule-content p-3">
-                        <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                        <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                        <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                    </div>
+                <?php } ?>
                 </div>
             </section>
         </div>

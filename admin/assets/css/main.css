@@ -293,6 +293,52 @@ footer {
   color: #ffffff;
 }
 
+.userList div {
+  width: 20.2rem;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+.userList div div img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+.userList div h5 {
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1.3rem;
+}
+.userList div h6 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #adadad;
+}
+.userList div button:nth-child(4) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #003399;
+  border-radius: 0.5rem;
+  margin: 0rem 1rem 0rem 0rem;
+  color: #ffffff;
+}
+.userList div button:nth-child(4):hover {
+  background-color: #003399;
+  color: #ffffff;
+}
+.userList div button:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  margin: 0rem 0.5rem 0rem 0rem;
+  color: #ffffff;
+}
+.userList div button:nth-child(5):hover {
+  background-color: #dc0000;
+  color: #ffffff;
+}
+
 .speedNewsEdit {
   width: 30rem;
 }
@@ -550,6 +596,110 @@ footer {
 }
 .originalList div button:nth-child(5):hover {
   background-color: #dc0000;
+  color: #ffffff;
+}
+
+.promoterEdit {
+  width: 30rem;
+}
+@media (max-width: 992px) {
+  .promoterEdit {
+    width: 100%;
+  }
+}
+.promoterEdit .promoterEdit-form div label {
+  font-family: metropolis-bold;
+}
+.promoterEdit .promoterEdit-form div input {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+}
+.promoterEdit .promoterEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.promoterEdit .promoterEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+}
+
+.promoterList div {
+  width: 20.2rem;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+.promoterList div div {
+  padding: 1rem 2rem 0rem 2rem;
+}
+.promoterList div div img {
+  width: 100%;
+  height: auto;
+}
+.promoterList div h5 {
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1.3rem;
+}
+.promoterList div h6 {
+  font-family: metropolis-bold;
+  font-size: 1rem;
+  color: #adadad;
+}
+.promoterList div button:nth-child(4) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #003399;
+  border-radius: 0.5rem;
+  margin: 0rem 1rem 0rem 0rem;
+  color: #ffffff;
+}
+.promoterList div button:nth-child(4):hover {
+  background-color: #003399;
+  color: #ffffff;
+}
+.promoterList div button:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc0000;
+  border-radius: 0.5rem;
+  margin: 0rem 0.5rem 0rem 0rem;
+  color: #ffffff;
+}
+.promoterList div button:nth-child(5):hover {
+  background-color: #dc0000;
+  color: #ffffff;
+}
+
+.appearanceEdit {
+  width: 30rem;
+}
+@media (max-width: 992px) {
+  .appearanceEdit {
+    width: 100%;
+  }
+}
+.appearanceEdit .appearanceEdit-form div label {
+  font-family: metropolis-bold;
+}
+.appearanceEdit .appearanceEdit-form div input {
+  margin: -0.3rem 0rem 0rem 0rem;
+  border-radius: 0.5rem;
+}
+.appearanceEdit .appearanceEdit-form button {
+  padding-top: 0.49rem;
+  background-color: #003399;
+  font-family: metropolis-bold;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.appearanceEdit .appearanceEdit-form button:hover {
+  background-color: #003399;
+  font-family: metropolis-bold;
   color: #ffffff;
 }
 

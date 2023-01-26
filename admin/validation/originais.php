@@ -3,6 +3,7 @@ include('../../connect.php');
 
 //CADASTRA ORIGINAL*******************************************************
 if($_GET['model'] == "create"){
+    $data = date('d/m/y');
     $nome = $_POST['nome'];
     $tag = $_POST['tag'];
     $video = $_POST['video'];
@@ -10,7 +11,8 @@ if($_GET['model'] == "create"){
     $tag_tratamento01 = str_replace(" ", "-", preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities(trim($tag)))); //Remove acentuação e substitui espaço por traços
     $tag_tratamento02 = strtolower($tag_tratamento01);
 
-    $cadastra = $conn->prepare("INSERT INTO originais(nome,video,tag, tag_url) VALUES (:originalNome,:originalVideo,:originalTag,:originalTagUrl)");
+    $cadastra = $conn->prepare("INSERT INTO originais(data,nome,video,tag, tag_url) VALUES (:originalData,:originalNome,:originalVideo,:originalTag,:originalTagUrl)");
+    $cadastra->bindParam(":originalData", $data);
     $cadastra->bindParam(":originalNome", $nome);
     $cadastra->bindParam(":originalVideo", $video);
     $cadastra->bindParam(":originalTag", $tag);

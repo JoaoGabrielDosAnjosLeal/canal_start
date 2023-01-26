@@ -1,3 +1,6 @@
+<?php 
+    include('../../connect.php');
+?>
 <script defer>
     $('title').text('Canal START | Pausar não é uma OPÇÃO!');
     //SpeedNews
@@ -52,30 +55,19 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
                 <section class="speedNews-section d-flex flex-wrap gap-3 justify-content-center mt-4 mb-4">
+                <?php
+                    $busca_speednews = $conn->prepare("SELECT * FROM speed_news ORDER BY id DESC LIMIT 4");
+                    $busca_speednews->execute();
+
+                    while($exibe_speednews = $busca_speednews->fetch()){
+                ?>
                     <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://image.api.playstation.com/vulcan/ap/rnd/202206/0719/qpAUFYXSVRlSN0Z1MSKXPu92.jpg" loading="lazy" alt="Thumb da Speed News">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <div class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</div>
+                        <img class="speedNews-thumb" src="<?php echo $exibe_speednews['thumb']; ?>" loading="lazy" alt="Thumb da Speed News">
+                        <p class="speedNews-text position-absolute"><span>#<?php echo $exibe_speednews['hashtag']; ?></span> <?php echo $exibe_speednews['conteudo']; ?></p>
+                        <div class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;<?php echo $exibe_speednews['autor']; ?> | <i class="bi bi-calendar-date-fill"></i>&nbsp;<?php echo $exibe_speednews['data']; ?></div>
                         <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
                     </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da Speed News">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <div class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</div>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da Speed News">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <div class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</div>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
-                    <article class="speedNews-article position-relative">
-                        <img class="speedNews-thumb" src="https://cineclick-static.flixmedia.cloud/1280/cf70826d-b827-49e6-8b35-b1bb5f7866aa.webp" loading="lazy" alt="Thumb da Speed News">
-                        <p class="speedNews-text position-absolute"><span>#Teste de Hashtag</span> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable E</p>
-                        <div class="speedNews-credits position-absolute"><i class="bi bi-person-circle"></i>&nbsp;Takashi | <i class="bi bi-calendar-date-fill"></i>&nbsp;00/00/0000</div>
-                        <button class="speedNews-view btn p-0 border-0 position-absolute" aria-label="Visualizar imagem"><i class="bi bi-eye-fill"></i></button>
-                    </article>
+                <?php } ?>
                 </section>
                 <div class="speedNews-plus w-100 d-flex justify-content-center mb-4">
                     <button onclick="history.pushState('speednews', 'speednews', '/canal_start/speednews/'); router();" type="button" class="btn btn-primary text-uppercase" aria-label="Mais speed news"><i class="bi bi-plus-lg"></i> Exibir mais speedNews</button>
@@ -92,26 +84,18 @@
                 <section class="schedule-section">
                     <h6 class="schedule-title text-center text-uppercase">Programas em destaques</h6>
                     <div class="schedule-container d-flex gap-3 justify-content-center flex-wrap mt-4">
+                    <?php
+                        $busca_programacao = $conn->prepare("SELECT * FROM programacao WHERE destaque='sim' ORDER BY id DESC LIMIT 4");
+                        $busca_programacao->execute();
+
+                        while($exibe_programacao = $busca_programacao->fetch()){
+                    ?>
                         <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
+                            <img class="schedule-contentThumb rounded-circle" src="<?php echo $exibe_programacao['thumb']; ?>" loading="lazy" alt="Thumb do programa">
+                            <h5 class="schedule-contentTitle text-uppercase"><?php echo $exibe_programacao['nome']; ?></h5>
+                            <h6 class="schedule-contentClock"><?php echo $exibe_programacao['horario']; ?></h6>
                         </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
-                        <div class="schedule-content p-3">
-                            <img class="schedule-contentThumb rounded-circle" src="https://ptanime.com/wp-content/uploads/2022/05/Megumin-Konosuba-top-20-personagens-mais-magneticos-2016-Charapedia.jpg" loading="lazy" alt="Thumb do programa">
-                            <h5 class="schedule-contentTitle text-uppercase">Konosubarashi isekai seikatsu</h5>
-                            <h6 class="schedule-contentClock">18h00, 19h00, 20h00, 22h00</h6>
-                        </div>
+                    <?php } ?>
                     </div>
                 </section>
             </div>
@@ -126,14 +110,17 @@
                 <section class="originals-section">
                     <h6 class="originals-title text-center text-uppercase">Conteúdos Originais</h6>
                     <div class="originals-container d-flex justify-content-center gap-4 mt-4">
+                    <?php
+                        $busca_originais = $conn->prepare("SELECT * FROM originais ORDER BY id DESC LIMIT 2");
+                        $busca_originais->execute();
+
+                        while($exibe_originais = $busca_originais->fetch()){
+                    ?>
                         <div class="originals-content">
-                            <iframe class="rumble" width="100%" height="360" src="https://rumble.com/embed/v137ptw/?pub=4" frameborder="0" allowfullscreen></iframe>
-                            <h6 class="originals-contentTitle text-uppercase mt-2"><a href="#" title="#">Gameplay na TV - Melhores Momementos</a> | 00/00/0000</h6>
+                            <iframe class="rumble" src="<?php echo $exibe_originais['video']; ?>" frameborder="0" allowfullscreen></iframe>
+                            <h6 class="originals-contentTitle text-uppercase mt-2 w-100"><a href="/canal_start/originais/<?php echo $exibe_originais['tag_url']; ?>" title="<?php echo $exibe_originais['nome']; ?>"><?php echo $exibe_originais['nome']; ?></a> | <?php echo $exibe_originais['data']; ?></h6>
                         </div>
-                        <div class="originals-content">
-                            <iframe class="rumble" width="100%" height="360" src="https://rumble.com/embed/v137ptw/?pub=4" frameborder="0" allowfullscreen></iframe>
-                            <h6 class="originals-contentTitle text-uppercase mt-2"><a href="#" title="#">Gameplay na TV - Melhores Momementos</a> | 00/00/0000</h6>
-                        </div>
+                    <?php } ?>
                     </div>
                 </section>
             </div>
@@ -147,13 +134,15 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xll-12">
                 <section class="where-section">
                     <h6 class="where-title text-center text-uppercase">Onde nos encontrar?</h6>
-                    <div class="where-container d-flex gap-5 flex-wrap justify-content-center mt-4">
-                        <a href="#" title="Rumble" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-rumble.webp" alt="Logo Rumble"></a>
-                        <a href="#" title="Youtube" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-youtube.webp" alt="Logo Youtube"></a>
-                        <a href="#" title="Twitch" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-twitch.webp" alt="Logo Twitch"></a>
-                        <a href="#" title="Facebook" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-facebook.webp" alt="Logo Facebook"></a>
-                        <a href="#" title="Twitter" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-twitter.webp" alt="Logo Twitter"></a>
-                        <a href="#" title="Instagram" target="_blank"><img class="where-thumb" src="<?php $_SERVER['HTTP_HOST'];?>/canal_start/site/assets/img/where-instagram.webp" alt="Logo Instagram"></a>
+                    <div class="where-container d-flex gap-5 flex-wrap justify-content-center mt-4">~
+                    <?php
+                        $busca_divulgacao = $conn->prepare("SELECT * FROM divulgacao ORDER BY id DESC LIMIT 2");
+                        $busca_divulgacao->execute();
+
+                        while($exibe_divulgacao = $busca_divulgacao->fetch()){
+                    ?>
+                        <a href="<?php echo $exibe_divulgacao['url']; ?>" title="<?php echo $exibe_divulgacao['nome']; ?>" target="_blank"><img class="where-thumb" src="<?php echo $exibe_divulgacao['logo']; ?>" alt="Logo <?php echo $exibe_divulgacao['nome']; ?>"></a>
+                    <?php } ?>
                     </div>
                 </section>
             </div>

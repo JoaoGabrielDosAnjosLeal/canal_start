@@ -52,7 +52,7 @@ function profile_edit(){
     if(profileEdit_avatar == undefined){
         $.ajax({
             type: 'post',
-            url: '/canal_start/admin/validation/profile.php?avatar=no',
+            url: '/canal_start/admin/validation/usuarios.php?model=edit&avatar=no',
             data: {
                 'id': profileEdit_id,
                 'email': profileEdit_email, 
@@ -62,7 +62,7 @@ function profile_edit(){
             },
             success: function(validacao){
                 if(validacao == "sucesso"){
-                    alert("Seu perfil foi atualizado com sucesso!");
+                    alert("O perfil foi atualizado com sucesso!");
                     location.reload();
                 }else{
                     alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
@@ -77,7 +77,7 @@ function profile_edit(){
             const avatar = avatarblob.result;
             $.ajax({
                 type: 'post',
-                url: '/canal_start/admin/validation/profile.php?avatar=yes',
+                url: '/canal_start/admin/validation/usuarios.php?model=edit&avatar=yes',
                 data: {
                     'id': profileEdit_id,
                     'email': profileEdit_email, 
@@ -88,7 +88,7 @@ function profile_edit(){
                 },
                 success: function(validacao){
                     if(validacao == "sucesso"){
-                        alert("Seu perfil foi atualizado com sucesso!");
+                        alert("O perfil foi atualizado com sucesso!");
                         location.reload();
                     }
                     else{
@@ -98,6 +98,42 @@ function profile_edit(){
                 }
             });
         }
+    }
+}
+
+function profile_create(){
+    const profileCreate = document.querySelector('.profileEdit-form');
+    const profileCreate_email = profileCreate.email.value;
+    const profileCreate_senha = profileCreate.senha.value;
+    const profileCreate_nome = profileCreate.nome.value;
+    const profileCreate_apelido = profileCreate.apelido.value;
+    const profileCreate_avatar = profileCreate.avatar.files[0];
+
+    const avatarblob = new FileReader();
+    avatarblob.readAsDataURL(profileCreate_avatar);
+    avatarblob.onload = function(){
+        const avatar = avatarblob.result;
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/usuarios.php?model=create',
+            data: {
+                'email': profileCreate_email, 
+                'senha': profileCreate_senha,
+                'nome': profileCreate_nome,
+                'apelido': profileCreate_apelido,
+                'avatar': avatar
+            },
+            success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("O perfil foi criado com sucesso!");
+                    location.reload();
+                }
+                else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
     }
 }
 
@@ -325,4 +361,179 @@ function original_editar(){
             }
         }
     });
+}
+
+//******APARÊNCIA*******
+function appearance_edit(){
+    const appearanceForm = document.querySelector('.appearanceEdit-form');
+    const appearance_destaque = appearanceForm.destaque.files[0];
+    const appearance_originais = appearanceForm.originais.files[0];
+    const appearance_divulgacao = appearanceForm.divulgacao.files[0];
+    const appearance_sobre = appearanceForm.sobre.files[0];
+
+    if(appearance_destaque != undefined){
+        const backgroundblob = new FileReader();
+        backgroundblob.readAsDataURL(appearance_destaque);
+        backgroundblob.onload = function(){
+        const background = backgroundblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/aparencia.php?model=destaque',
+                data: {
+                    'background': background
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O background foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
+    if(appearance_originais != undefined){
+        const backgroundblob = new FileReader();
+        backgroundblob.readAsDataURL(appearance_originais);
+        backgroundblob.onload = function(){
+        const background = backgroundblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/aparencia.php?model=originais',
+                data: {
+                    'background': background
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O background foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
+    if(appearance_divulgacao != undefined){
+        const backgroundblob = new FileReader();
+        backgroundblob.readAsDataURL(appearance_divulgacao);
+        backgroundblob.onload = function(){
+        const background = backgroundblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/aparencia.php?model=divulgacao',
+                data: {
+                    'background': background
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O background foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
+    if(appearance_sobre != undefined){
+        const backgroundblob = new FileReader();
+        backgroundblob.readAsDataURL(appearance_sobre);
+        backgroundblob.onload = function(){
+        const background = backgroundblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/aparencia.php?model=sobre',
+                data: {
+                    'background': background
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O background foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
+}
+
+//******DIVULGAÇÃO*******
+function promoter_create(){
+    const promoterForm = document.querySelector('.promoterEdit-form');
+    const promoterForm_nome = promoterForm.nome.value;
+    const promoterForm_url = promoterForm.url.value;
+    const promoterForm_logo = promoterForm.logomarca.files[0];
+
+    const logoblob = new FileReader();
+        logoblob.readAsDataURL(promoterForm_logo);
+        logoblob.onload = function(){
+        const logo = logoblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/divulgacao.php?model=create',
+                data: {
+                    'nome': promoterForm_nome,
+                    'url': promoterForm_url,
+                    'logo': logo
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O divulgador foi criado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+}
+
+function promoter_edit(){
+    const promoterForm = document.querySelector('.promoterEdit-form');
+    const promoterForm_id = promoterForm.id.value;
+    const promoterForm_nome = promoterForm.nome.value;
+    const promoterForm_url = promoterForm.url.value;
+    const promoterForm_logo = promoterForm.logomarca.files[0];
+
+    if(promoterForm_logo == undefined){
+        $.ajax({
+            type: 'post',
+            url: '/canal_start/admin/validation/divulgacao.php?model=edit&logo=no',
+            data: {
+                'id': promoterForm_id,
+                'nome': promoterForm_nome,
+                'url': promoterForm_url,
+            },success: function(validacao){
+                if(validacao == "sucesso"){
+                    alert("O divulgador foi editado com sucesso!");
+                }else{
+                    alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                    console.log(validacao);
+                }
+            }
+        });
+
+    }else{
+        const logoblob = new FileReader();
+        logoblob.readAsDataURL(promoterForm_logo);
+        logoblob.onload = function(){
+        const logo = logoblob.result;
+            $.ajax({
+                type: 'post',
+                url: '/canal_start/admin/validation/divulgacao.php?model=edit&logo=yes',
+                data: {
+                    'id': promoterForm_id,
+                    'nome': promoterForm_nome,
+                    'url': promoterForm_url,
+                    'logo': logo
+                },success: function(validacao){
+                    if(validacao == "sucesso"){
+                        alert("O divulgador foi editado com sucesso!");
+                    }else{
+                        alert("Ocorreu um erro no processamento dos dados! Procure o desenvolvedor e verifique o console.");
+                        console.log(validacao);
+                    }
+                }
+            });
+        }   
+    }
 }

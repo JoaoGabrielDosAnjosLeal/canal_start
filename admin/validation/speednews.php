@@ -19,12 +19,16 @@ if($_GET['model'] == "create"){
     $hashtag = $_POST['hashtag'];
     $conteudo = $_POST['conteudo'];
     $thumb = $_POST['thumb'];
+    $react_like = "0";
+    $react_deslike = "0";
+    $react_love = "0";
+    $react_sad = "0";
 
     $url_tratamento01 = str_replace(" ", "-", preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities(trim($titulo)))); //Remove acentuação e substitui espaço por traços
     $url_tratamento02 = strtolower($url_tratamento01); // Deixa tudo em minusculo
     $url = $url_tratamento02;
 
-    $cadastra = $conn->prepare("INSERT INTO speed_news(autor,data,titulo,hashtag,conteudo,thumb,url) VALUES (:postAutor, :postData, :postTitulo, :postHashtag, :postConteudo, :postThumb, :postUrl)");
+    $cadastra = $conn->prepare("INSERT INTO speed_news(autor,data,titulo,hashtag,conteudo,thumb,url,react_gostei,react_nao_gostei,react_amei,react_triste) VALUES (:postAutor, :postData, :postTitulo, :postHashtag, :postConteudo, :postThumb, :postUrl,:postReactGostei,:postReactNaoGostei,:postReactAmei,:postReactTriste)");
     $cadastra->bindParam(":postAutor", $autor);
     $cadastra->bindParam(":postData", $data);
     $cadastra->bindParam(":postTitulo", $titulo);
@@ -32,6 +36,10 @@ if($_GET['model'] == "create"){
     $cadastra->bindParam(":postConteudo", $conteudo);
     $cadastra->bindParam(":postThumb", $thumb);
     $cadastra->bindParam(":postUrl", $url);
+    $cadastra->bindParam(":postReactGostei", $react_like);
+    $cadastra->bindParam(":postReactNaoGostei", $react_deslike);
+    $cadastra->bindParam(":postReactAmei", $react_love);
+    $cadastra->bindParam(":postReactTriste", $react_sad);
 
     if($cadastra->execute()){
         echo "sucesso";

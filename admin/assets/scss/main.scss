@@ -279,7 +279,7 @@ footer{
     }
 }
 
-//**********PERFIL**********
+//**********Usuários**********
 .profileEdit{
     width: 30rem;
     @include lg{
@@ -309,6 +309,60 @@ footer{
         }
     }
 }
+
+.userList{
+    div{
+        width: 20.2rem;
+        height: auto;
+        background-color: $branco;
+        border-radius: 0.5rem;
+        div{
+            img{
+                width: 6rem;
+                height: 6rem;
+                object-fit: cover;
+            }
+        }
+        h5{
+            padding: 0rem 0.5rem 0rem 0.5rem;
+            font-family: metropolis-bold;
+            font-size: 1.3rem;
+        }
+        h6{
+            font-family: metropolis-bold;
+            font-size: 1rem;
+            color: $cinza-medio-01;
+        }
+        button{
+            &:nth-child(4){
+                width: 2rem;
+                height: 2rem;
+                background-color: $azul-medio-01;
+                border-radius: 0.5rem;
+                margin: 0rem 1rem 0rem 0rem;
+
+                color: $branco;
+                &:hover{
+                    background-color: $azul-medio-01;
+                    color: $branco;
+                }
+            }
+            &:nth-child(5){
+                width: 2rem;
+                height: 2rem;
+                background-color: $vermelho-medio-01;
+                border-radius: 0.5rem;
+                margin: 0rem 0.5rem 0rem 0rem;
+                color: $branco;
+                &:hover{
+                    background-color: $vermelho-medio-01;
+                    color: $branco;
+                }
+            }
+        }
+    }
+}
+
 
 //**********SPEED NEWS**********
 .speedNewsEdit{
@@ -592,6 +646,122 @@ footer{
                     background-color: $vermelho-medio-01;
                     color: $branco;
                 }
+            }
+        }
+    }
+}
+
+
+//**********DIVULGAÇÃO**********
+.promoterEdit{
+    width: 30rem;
+    @include lg{
+        width: 100%;
+    }
+    .promoterEdit-form{
+        div{
+            label{
+                font-family: metropolis-bold;
+            }
+            input{
+                margin: -0.3rem 0rem 0rem 0rem;
+                border-radius: 0.5rem;
+            }
+        }
+        button{
+            padding-top: 0.49rem;
+            background-color: $azul-medio-01;
+            font-family: metropolis-bold;
+            color: $branco;
+            font-size: 1rem;
+            &:hover{
+                background-color: $azul-medio-01;
+                font-family: metropolis-bold;
+                color: $branco;  
+            }
+        }
+    }
+}
+
+.promoterList{
+    div{
+        width: 20.2rem;
+        height: auto;
+        background-color: $branco;
+        border-radius: 0.5rem;
+        div{
+            padding: 1rem 2rem 0rem 2rem;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        h5{
+            padding: 0rem 0.5rem 0rem 0.5rem;
+            font-family: metropolis-bold;
+            font-size: 1.3rem;
+        }
+        h6{
+            font-family: metropolis-bold;
+            font-size: 1rem;
+            color: $cinza-medio-01;
+        }
+        button{
+            &:nth-child(4){
+                width: 2rem;
+                height: 2rem;
+                background-color: $azul-medio-01;
+                border-radius: 0.5rem;
+                margin: 0rem 1rem 0rem 0rem;
+
+                color: $branco;
+                &:hover{
+                    background-color: $azul-medio-01;
+                    color: $branco;
+                }
+            }
+            &:nth-child(5){
+                width: 2rem;
+                height: 2rem;
+                background-color: $vermelho-medio-01;
+                border-radius: 0.5rem;
+                margin: 0rem 0.5rem 0rem 0rem;
+                color: $branco;
+                &:hover{
+                    background-color: $vermelho-medio-01;
+                    color: $branco;
+                }
+            }
+        }
+    }
+}
+
+//**********APARÊNCIA**********
+.appearanceEdit{
+    width: 30rem;
+    @include lg{
+        width: 100%;
+    }
+    .appearanceEdit-form{
+        div{
+            label{
+                font-family: metropolis-bold;
+            }
+            input{
+                margin: -0.3rem 0rem 0rem 0rem;
+                border-radius: 0.5rem;
+            }
+        }
+        button{
+            padding-top: 0.49rem;
+            background-color: $azul-medio-01;
+            font-family: metropolis-bold;
+            color: $branco;
+            font-size: 1rem;
+            &:hover{
+                background-color: $azul-medio-01;
+                font-family: metropolis-bold;
+                color: $branco;  
             }
         }
     }

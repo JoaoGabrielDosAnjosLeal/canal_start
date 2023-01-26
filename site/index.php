@@ -1,3 +1,6 @@
+<?php 
+    include('../connect.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,13 +22,6 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
     <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
-
-    <link rel="preload" href="https://code.jquery.com/jquery-3.6.1.min.js" as="script">
-    <link rel="preload" href="https://code.jquery.com/ui/1.12.1/jquery-ui.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" as="script">
-    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video.min.js" as="script">
-    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.min.js" as="script">
 
     <link rel="preconnect" href="https://stmv1.srvif.com/canalstart/canalstart/playlist.m3u8">
     <!--css--> 

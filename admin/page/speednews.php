@@ -46,6 +46,9 @@ if($url_explode[4] == "editar"){
             <h6 class="page-start mt-2">
                 Editar speed news
             </h6>
+            <div class="alert alert-dark w-50" role="alert">
+                <i class="bi bi-link-45deg"></i>&nbsp;<b>Compartilhe:</b> https://canalstart.games/speednews/<?php echo $resultado_busca_post['url']; ?>
+            </div>
             <section class="speedNewsEdit mt-4 mb-4">
                 <form class="speedNewsEdit-form" action="javascript: speedNews_edit();" enctype="multipart/form-data">
                     <input type="text" name="id" class="d-none" value="<?php echo $resultado_busca_post['id']; ?>">

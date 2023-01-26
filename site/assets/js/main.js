@@ -123,3 +123,76 @@ function themeIndex(){
 }
 
 themeIndex();
+
+//******VOTAÇÃO SPEED NEWS******
+function react_like(){
+    const url = window.location.href;
+    const urlSplit = url.split("/");
+    const urlPoint = urlSplit[4] //Marcador da página
+    const urlSubPoint01 = urlSplit[5]; //Parametro necessário
+
+    $.ajax({
+        type: 'post',
+        url: '/canal_start/site/validation/speednews.php?type=react&model=like',
+        data:{
+            'url': urlSubPoint01
+        },
+        success: function(validation){
+            router();
+        }
+    });
+}
+
+function react_deslike(){
+    const url = window.location.href;
+    const urlSplit = url.split("/");
+    const urlPoint = urlSplit[4] //Marcador da página
+    const urlSubPoint01 = urlSplit[5]; //Parametro necessário
+
+    $.ajax({
+        type: 'post',
+        url: '/canal_start/site/validation/speednews.php?type=react&model=deslike',
+        data:{
+            'url': urlSubPoint01
+        },
+        success: function(validation){
+            router();
+        }
+    });
+}
+
+function react_love(){
+    const url = window.location.href;
+    const urlSplit = url.split("/");
+    const urlPoint = urlSplit[4] //Marcador da página
+    const urlSubPoint01 = urlSplit[5]; //Parametro necessário
+
+    $.ajax({
+        type: 'post',
+        url: '/canal_start/site/validation/speednews.php?type=react&model=love',
+        data:{
+            'url': urlSubPoint01
+        },
+        success: function(validation){
+            router();
+        }
+    });
+}
+
+function react_sad(){
+    const url = window.location.href;
+    const urlSplit = url.split("/");
+    const urlPoint = urlSplit[4] //Marcador da página
+    const urlSubPoint01 = urlSplit[5]; //Parametro necessário
+
+    $.ajax({
+        type: 'post',
+        url: '/canal_start/site/validation/speednews.php?type=react&model=sad',
+        data:{
+            'url': urlSubPoint01
+        },
+        success: function(validation){
+            router();
+        }
+    });
+}

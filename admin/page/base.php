@@ -49,11 +49,6 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style">
     <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video-js.css" as="style">
 
-    <link rel="preload" href="https://code.jquery.com/jquery-3.6.1.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" as="script">
-    <link rel="preload" href="https://vjs.zencdn.net/7.20.3/video.min.js" as="script">
-    <link rel="preload" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/js/main.js" as="script">
-
     <link rel="preconnect" href="https://stmv1.srvif.com/canalstart/canalstart/playlist.m3u8">
     <!--css--> 
     <link rel="stylesheet" href="<?php $_SERVER['HTTP_HOST'];?>/canal_start/admin/assets/css/main.css">
@@ -75,7 +70,7 @@
     </div>
     <ul class="sidenav-list mt-3 p-0">
         <li onclick="window.location.href='/canal_start/painel/inicio';"><i class="bi bi-house-fill"></i>&nbsp;Inicio</li>
-        <li onclick="window.location.href='/canal_start/painel/perfil';"><i class="bi bi-person-fill"></i>&nbsp;Meu Perfil</li>
+        <li onclick="window.location.href='/canal_start/painel/usuarios/editar/<?php echo $exibe_busca_user['id']; ?>';"><i class="bi bi-person-fill"></i>&nbsp;Meu Perfil</li>
         <li><i class="bi bi-calendar-date-fill"></i>&nbsp;Programação
             <ul>
                 <li onclick="window.location.href='/canal_start/painel/programacao/novo';">Criar novo programa</li>
@@ -96,12 +91,12 @@
         </li>
         <li><i class="bi bi-gear-fill"></i>&nbsp;Configurações
             <ul>
-                <li>Gerênciar usuários</li>
-                <li>Gerênciar aparência do site</li>
-                <li>Gêrenciar divulgação</li>
+                <li onclick="window.location.href='/canal_start/painel/usuarios/lista';">Gerênciar usuários</li>
+                <li onclick="window.location.href='/canal_start/painel/aparencia';">Gerênciar aparência</li>
+                <li onclick="window.location.href='/canal_start/painel/divulgacao/lista';">Gêrenciar divulgação</li>
             </ul>
         </li>
-        <li><i class="bi bi-door-open-fill"></i>&nbsp;Deslogar</li>
+        <li  onclick="window.location.href='/canal_start/admin/validation/deslogar.php';"><i class="bi bi-door-open-fill"></i>&nbsp;Deslogar</li>
     </ul>
 </nav>
 
@@ -131,6 +126,15 @@
             break;
             case 'originais':
                 include('originais.php');
+            break;
+            case 'usuarios':
+                include('usuarios.php');
+            break;
+            case 'divulgacao':
+                include('divulgacao.php');
+            break;
+            case 'aparencia':
+                include('aparencia.php');
             break;
         }
     ?>
